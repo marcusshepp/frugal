@@ -1,3 +1,4 @@
+# https://www.railstutorial.org/book/basic_login
 class UsersController < ApplicationController
     def show
         @user = User.find(params[:id])
