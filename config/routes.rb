@@ -1,13 +1,13 @@
 Rails.application.routes.draw do
-  get 'sessions/new'
+  # items
+  get '/foo', to: 'item#index'
 
-  get 'users/new'
-  get '/foo/', to: 'item#index'
+  # users
   resources :users
 
   # sessions
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
-  delete '/logout', to: 'sessions#destroy'
+  get '/logout', to: 'sessions#destroy'
 
 end
