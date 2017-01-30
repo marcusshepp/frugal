@@ -1,0 +1,10 @@
+Creating new Item
+
+<%= form_for(@item) do |f| %>
+	<%= f.label :name %>
+	<%= f.text_field :name %>
+	<%= f.label :price %>
+	<%= f.number_field :price %>
+	<%= f.select :category_id, options_for_select(Category.all.map{|c|[c.name, c.id]})%> 
+	<%= f.submit %>
+<% end %>

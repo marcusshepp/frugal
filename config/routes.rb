@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   # items
   get '/foo', to: 'item#index'
+  get '/items/new', to: 'item#new'
+  resources :items
 
   # users
   resources :users
