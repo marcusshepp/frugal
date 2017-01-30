@@ -9,6 +9,12 @@
   </head>
 
   <body>
-    <%= yield %>
+      <div class="container">
+          <% flash.each do |key, value| %>
+              <div class="flash_message">
+                  <%= key %>, <%= value %>
+          <% end %>
+          <%= yield %>
+      </div>
   </body>
 </html>
