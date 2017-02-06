@@ -1,8 +1,0 @@
-New Budget
-
-<%= form_for(@budget_path) do |f| %>
-  <%= f.label :amount %>
-  <%= f.number_field :amount %>
-  <%= f.hidden_field :user_id, :value => current_user.id %>
-  <%= f.submit %>
-<% end %>

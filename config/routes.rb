@@ -11,7 +11,8 @@ Rails.application.routes.draw do
   resources :categories
 
   #budget
-  resources :budget
+
+  resources :budgets
 
   # sessions
   get '/login', to: 'sessions#new'
