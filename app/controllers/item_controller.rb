@@ -9,9 +9,9 @@ class ItemController < ApplicationController
 
     def create
         @item = Item.new(item_params)
-        if @item.save
+        if @item.save´
             flash[:success] = "item created"
-        end    
+        end
     end
 
      private
