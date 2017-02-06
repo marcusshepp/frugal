@@ -1,0 +1,13 @@
+<% @budgets.each do |budget| %>
+<table>
+  <tr>
+    <th>Budget</th>
+    <th>Money Left</th>
+
+<tr>
+  <td><%= budget.total_amount %></td>
+  <td><%= budget.current_amount %></td>
+  <td><%= link_to 'Edit', budget_path(budget) %></td>
+</tr>
+<% end %>
+</table>
