@@ -10,6 +10,9 @@ Rails.application.routes.draw do
   # categories
   resources :categories
 
+  #budget
+  resources :budget
+
   # sessions
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
