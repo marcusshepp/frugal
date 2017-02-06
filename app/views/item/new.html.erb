@@ -7,5 +7,6 @@ Creating new Item
 	<%= f.number_field :price %>
 	<%= f.select :category_id, options_for_select(Category.all.map{|c|[c.name, c.id]})%> 
     <%= f.hidden_field :user_id, :value => current_user.id %>
+	<%= link_to "New Category", new_category_url %>
 	<%= f.submit %>
 <% end %>
