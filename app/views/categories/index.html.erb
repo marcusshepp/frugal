@@ -1,0 +1,10 @@
+<% @categories.each do |category| %>
+<table>
+  <tr>
+    <th>Category</th>
+<tr>
+  <td><%= category.name %></td>
+  <td><%= link_to 'Edit', category_path(category) %></td>
+</tr>
+<% end %>
+</table>
