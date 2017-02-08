@@ -9,12 +9,20 @@
   </head>
 
   <body>
+    <div class="nav-bar">
+      <%= link_to 'Items', items_path %>
+      <%= link_to 'Categories', categories_path %>
+      <%= link_to 'Budget', budgets_path %>
+      <%= link_to 'Purchases', purchases_path %>
+    </div>
       <div class="container">
           <%= render 'shared/header' %>
           <% flash.each do |key, value| %>
               <div class="flash_message">
                   <%= key %>, <%= value %>
           <% end %>
+
+
           <%= yield %>
       </div>
   </body>
