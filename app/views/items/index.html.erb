@@ -10,7 +10,8 @@
   <td><%= item.name %></td>
   <td><%= item.price %></td>
   <td><%= Category.all.select{|c| c.id==item.category_id}.first.name %></td>
-  <td><%= link_to 'Edit', item_path(item) %></td>
+  <td><%= link_to 'Edit', edit_item_path(item) %></td>
+  <td><%= link_to 'Purchase', purchase_path(item) %></td>
 </tr>
 <% end %>
 </table>

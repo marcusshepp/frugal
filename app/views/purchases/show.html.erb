@@ -1,0 +1,11 @@
+
+<p>
+  <strong>Purchase</strong>
+  <%= @purchase.amount %>
+</p>
+
+<p>
+  <%= Item.all.select{|c| c.id==@purchase.item_id}.first.name %>
+</p>
+<%= link_to 'Edit', edit_purchase_path(@purchase) %>
+<%= link_to 'Back', purchases_path %>

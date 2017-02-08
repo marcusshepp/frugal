@@ -1,0 +1,8 @@
+New Purchase
+
+<%= form_for(@purchase) do |f| %>
+	<%= f.label :amount %>
+	<%= f.number_field :amount %>
+	<%= f.select :item_id, options_for_select(Item.all.map{|c|[c.name, c.id]})%>
+	<%= f.submit %>
+<% end %>
