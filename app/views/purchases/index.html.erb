@@ -1,0 +1,15 @@
+
+<% @purchases.each do |purchase| %>
+<table>
+  <tr>
+    <th>Amount</th>
+
+
+
+<tr>
+  <td><%= purchase.amount %></td>
+  <td><%= link_to 'Edit', edit_purchase_path(purchase) %></td>
+  <td><%= link_to 'Show', purchase_path(purchase) %></td>
+</tr>
+<% end %>
+</table>

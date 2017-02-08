@@ -9,8 +9,10 @@ Rails.application.routes.draw do
   resources :categories
 
   #budget
-
   resources :budgets
+
+  #purchases
+  resources :purchases
 
   # sessions
   get '/login', to: 'sessions#new'
