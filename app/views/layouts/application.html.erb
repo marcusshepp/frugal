@@ -3,18 +3,23 @@
   <head>
     <title>Frugal</title>
     <%= csrf_meta_tags %>
-
+		<link rel="stylesheet" type="text/css"  href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <div class="nav-bar">
-      <%= link_to 'Items', items_path %>
-      <%= link_to 'Categories', categories_path %>
-      <%= link_to 'Budget', budgets_path %>
-      <%= link_to 'Purchases', purchases_path %>
+    <div id="cont" class="nav-bar">
+    	<ul>
+    		<li><%= link_to 'Items', items_path %></li>
+      	<li><%= link_to 'Categories', categories_path %></li>
+      	<li><%= link_to 'Budget', budgets_path %></li>
+      	<li><%= link_to 'Purchases', purchases_path %></li>
+      </ul>
     </div>
+    <br />
+    <br />
+    <br />
       <div class="container">
           <%= render 'shared/header' %>
           <% flash.each do |key, value| %>
