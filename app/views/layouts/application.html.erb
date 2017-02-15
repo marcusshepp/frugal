@@ -9,32 +9,32 @@
   </head>
 
   <body>
-    <div id="cont" class="nav-bar">
-    	<ul>
-    		<li><%= link_to 'Items', items_path %></li>
-      	<li><%= link_to 'Categories', categories_path %></li>
-      	<li><%= link_to 'Budget', budgets_path %></li>
-      	<li><%= link_to 'Purchases', purchases_path %></li>
-        <% if current_user %>
-          <li><%= render 'shared/header' %></li>
-        <% end %>
-          <% if not current_user %>
-  <li><%= link_to 'Login', login_path %></li>
-            <% end %>
-      </ul>
-    </div>
-    <br />
-    <br />
-    <br />
-      <div class="container">
-
-          <% flash.each do |key, value| %>
-              <div class="flash_message">
-                  <%= key %>, <%= value %>
-          <% end %>
-
-
-          <%= yield %>
+  	<div id="logo"><%= link_to image_tag("logo.png", :alt => "empty", :width => 98, :height =>98), login_path %></div>
+  	<table id="menu">
+  		<tr><td>
+  			<div id="cont">
+	   			<ul>
+	   				<li><%= link_to 'Items', items_path %></li>
+		     		<li><%= link_to 'Categories	', categories_path %></li>
+		     		<li><%= link_to 'Budget', budgets_path %></li>
+		     		<li><%= link_to 'Purchases', purchases_path %></li>
+		        <% if current_user %>
+    		      <li><%= render 'shared/header' %></li>
+       		 <% end %>
+           <% if not current_user %>
+  				 	<li><%= link_to 'Login', login_path %></li>
+           <% end %>
+		   	  </ul>
+  			</div>
+  		</td></tr>
+  	</table>
+    <div class="content">
+	    <%= render 'shared/header' %>
+      <% flash.each do |key, value| %>
+      <div class="flash_message">
+	      <%= key %>, <%= value %>
+	       <% end %>
+	      <%= yield %>
       </div>
   </body>
 </html>
