@@ -2,7 +2,23 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.newuser{
+	padding: 5px;
+	font-size: 25px;
+	position: relative;
+}
 
-body{
-	background-color: #216c2a;
+.user_new_form{
+	margin: auto;
+	background-color: white;
+	width: 600px;
+	height: 450px;
+	border: 1px solid gray;
+	border-radius: 15px;
+}
+
+caption{
+	color: black;
+	font-size: 40px;
+	text-align: center;
 }

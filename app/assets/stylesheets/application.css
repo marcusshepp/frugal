@@ -27,18 +27,32 @@ a{
 
 #cont ul{
 	list-style:none;
+	margin: 0px 0px 0px 0px;
 }
-
+#cont{
+	margin: 35px;
+}
 #cont ul li{
-	margin: auto;
 	background-color: coral;
 	width:150px;
 	border:1px solid white;
 	height:50px;
 	line-height:50px;
 	text-align:center;
-	float:left;
 	color:white;
 	font-size:18px;
+	float: left;
+	bottom: 50;
+}
+#menu{
+	margin: auto;
+}
+#logo{
+	width:1px;
+	height:1px;
+}
+.content{
+	top:100px;
+	position: relative;
 }
 
