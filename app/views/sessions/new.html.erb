@@ -1,13 +1,17 @@
-<%= form_for(:session, url: login_path) do |f|  %>
+<div id="login">
+	<%= form_for(:session, url: login_path) do |f|  %>
 
-    <%= f.label :email %>
-    <%= f.email_field :email %><br />
-    <%= f.label :password %>
-    <%= f.password_field :password %><br />
-
-    <%= f.submit "Log in" %>
-
-<% end %>
-<div>
-    New User? <%= link_to "Create New Account", new_user_path %>
+    	<div class="loginfield">
+    	<%= f.label :email %>:
+    	<%= f.email_field :email %>
+    	</div>
+    	<div class="loginfield">
+    	<%= f.label :password %>:
+    	<%= f.password_field :password %>
+  	  </div>
+  	  <div class="buttons">
+  	  <div class="loginfield"><%= f.submit "Log in" %></div>
+		 	<div class="loginfield"> <%= link_to "Create New Account", new_user_path %></div>
+		 	</div>
+	<% end %>
 </div>
