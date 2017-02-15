@@ -15,13 +15,19 @@
       	<li><%= link_to 'Categories', categories_path %></li>
       	<li><%= link_to 'Budget', budgets_path %></li>
       	<li><%= link_to 'Purchases', purchases_path %></li>
+        <% if current_user %>
+          <li><%= render 'shared/header' %></li>
+        <% end %>
+          <% if not current_user %>
+  <li><%= link_to 'Login', login_path %></li>
+            <% end %>
       </ul>
     </div>
     <br />
     <br />
     <br />
       <div class="container">
-          <%= render 'shared/header' %>
+
           <% flash.each do |key, value| %>
               <div class="flash_message">
                   <%= key %>, <%= value %>
