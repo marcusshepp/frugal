@@ -15,12 +15,12 @@
  */
 
 body{
-	background-color: #216c2a;
+	background-color: #55c094;
 	color: black;
 }
 
 a{
-	color:blue;
+	color:black;
 	font-style: underline;
 	font-weight: bold;
 }
@@ -33,7 +33,7 @@ a{
 	margin: 35px;
 }
 #cont ul li{
-	background-color: coral;
+	background-color: #71cad0;
 	width:150px;
 	border:1px solid white;
 	height:50px;
