@@ -20,7 +20,7 @@ body{
 }
 
 a{
-	color:black;
+	color:blue;
 	font-style: underline;
 	font-weight: bold;
 }
@@ -29,6 +29,11 @@ a{
 	list-style:none;
 	margin: 0px 0px 0px 0px;
 }
+
+#headlink{
+	color: black;
+}
+
 #cont{
 	margin: 35px;
 }
