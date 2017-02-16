@@ -14,15 +14,15 @@
   		<tr><td>
   			<div id="cont">
 	   			<ul>
-	   				<li><%= link_to 'Items', items_path %></li>
-		     		<li><%= link_to 'Categories	', categories_path %></li>
-		     		<li><%= link_to 'Budget', budgets_path %></li>
-		     		<li><%= link_to 'Purchases', purchases_path %></li>
+	   				<li><%= link_to 'Items', items_path, :id=>"headlink" %></li>
+		     		<li><%= link_to 'Categories	', categories_path, :id=>"headlink"%></li>
+		     		<li><%= link_to 'Budget', budgets_path, :id=>"headlink"%></li>
+		     		<li><%= link_to 'Purchases', purchases_path, :id=>"headlink"%></li>
 		        <% if current_user %>
-    		      <li><%= render 'shared/header' %></li>
+    		      <li><%= render 'shared/header',:id=>"headlink" %></li>
        		 <% end %>
            <% if not current_user %>
-  				 	<li><%= link_to 'Login', login_path %></li>
+  				 	<li><%= link_to 'Login', login_path, :id=>"headlink"%></li>
            <% end %>
 		   	  </ul>
   			</div>
