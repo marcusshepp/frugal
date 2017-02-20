@@ -9,25 +9,36 @@
   </head>
 
   <body>
-  	<div id="logo"><%= link_to image_tag("logo.png", :alt => "empty", :width => 98, :height =>98), login_path %></div>
-  	<table id="menu">
-  		<tr><td>
-  			<div id="cont">
-	   			<ul>
-	   				<li><%= link_to 'Items', items_path, :id=>"headlink" %></li>
-		     		<li><%= link_to 'Categories	', categories_path, :id=>"headlink"%></li>
-		     		<li><%= link_to 'Budget', budgets_path, :id=>"headlink"%></li>
-		     		<li><%= link_to 'Purchases', purchases_path, :id=>"headlink"%></li>
-		        <% if current_user %>
-    		      <li><%= render 'shared/header',:id=>"headlink" %></li>
-       		 <% end %>
-           <% if not current_user %>
-  				 	<li><%= link_to 'Login', login_path, :id=>"headlink"%></li>
-           <% end %>
-		   	  </ul>
-  			</div>
-  		</td></tr>
-  	</table>
+
+
+    <div class="navbar">
+      <nav>
+
+        <ul>
+  	<div class="li-container">
+      <ul>
+        <li><%= link_to image_tag("logo.png", :alt => "empty", :width => 98, :height =>98), login_path, class: 'logo-img' %></li>
+        <li><%= link_to 'Items', items_path, :id=>"headlink" %></li>
+        <li><%= link_to 'Categories	', categories_path, :id=>"headlink"%></li>
+        <li><%= link_to 'Budget', budgets_path, :id=>"headlink"%></li>
+        <li><%= link_to 'Purchases', purchases_path, :id=>"headlink"%></li>
+        <% if current_user %>
+          <li><%= render 'shared/header',:id=>"headlink" %></li>
+       <% end %>
+       <% if not current_user %>
+        <li><%= link_to 'Login', login_path, :id=>"headlink"%></li>
+       <% end %>
+  	</div>
+        </ul>
+        <div class="handle">
+  	<p align="center">Menu</p>
+        </div>
+      </nav>
+
+    </div>
+
+
+
     <div class="content">
       <% flash.each do |key, value| %>
       <div class="flash_message">
@@ -37,3 +48,9 @@
       </div>
   </body>
 </html>
+
+<script>
+$('.handle').on('click',function(){
+   $('nav ul').toggleClass('showing')
+});
+</script>
