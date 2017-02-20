@@ -1,4 +1,4 @@
-
+<% if current_user %>
 <% @items.each do |item| %>
 <table>
   <tr>
@@ -16,3 +16,5 @@
 <% end %>
 </table>
 <%= link_to 'Create Item', new_item_path %>
+
+<% end %>

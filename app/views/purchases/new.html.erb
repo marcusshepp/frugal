@@ -2,7 +2,12 @@ New Purchase
 
 <%= form_for(@purchase) do |f| %>
 	<%= f.label :amount %>
-	<%= f.number_field :amount %>
+	<% if not :item_id%>
+		<%= f.number_field :amount %>
+	<% end %>
+	<% if :item_id%>
+		<%= f.number_field :amount, :value => Item.all.select{|c| c.id==params[:item_id]}.first.price%>
+	<% end %>
 	<%= f.select :item_id, options_for_select(Item.all.map{|c|[c.name, c.id]})%>
 	<%= f.submit %>
 <% end %>
