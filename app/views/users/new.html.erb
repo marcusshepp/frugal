@@ -1,23 +1,24 @@
-<div class="user_new_form">	
+<div class="new-user">
+  <div class="user-header">
+    <h2>Create User</h2>
+  </div>
 	<%= form_for(@user) do |f| %>
-		<table>
-			<caption>Create New User</caption>
-			<tr>
-				<td class="newuser"><%= f.label :username %>:</td>
-				<td class="newuser"><%= f.text_field :username %></td>
-			</tr>
-			<tr>
-				<td class="newuser"><%= f.label :email %>:</td>
-				<td class="newuser"><%= f.text_field :email %></td>
-			</tr>		
-			<tr>
-				<td class="newuser"><%= f.label :password %>:</td>
-				<td class="newuser"><%= f.password_field :password %></td>
-			</tr>
-			<tr>
-		    <td class="newuser"><%= f.label :password_confirmation, "Confirmation" %>:</td>
-   			<td class="newuser"><%= f.password_field :password_confirmation %></td>
-   		</tr>
-    	<tr><td class="newuser"><%= f.submit "Create Account" %></td></tr>
+
+			<%= f.label :username, class: 'input' %>
+<%= f.text_field :username, class: 'input' %>
+
+
+				<%= f.label :email, class: 'input' %>
+				<%= f.text_field :email, class: 'input' %>
+
+
+				<%= f.label :password, class: 'input' %>
+				<%= f.password_field :password, class: 'input' %>
+
+
+		    <%= f.label :password_confirmation, "Confirmation", class: 'input' %>
+   			<%= f.password_field :password_confirmation, class: 'input' %>
+
+    	<%= f.submit "Create Account", class: 'input-button' %>
 	<% end %>
 </div>
