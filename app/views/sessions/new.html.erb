@@ -1,17 +1,20 @@
-<div id="login">
+<div class="login">
+  <div class="login-header">
+    <h2>Frugal-Login</h2>
+  </div>
 	<%= form_for(:session, url: login_path) do |f|  %>
 
-    	<div class="loginfield">
-    	<%= f.label :email %>:
-    	<%= f.email_field :email %>
-    	</div>
-    	<div class="loginfield">
-    	<%= f.label :password %>:
-    	<%= f.password_field :password %>
-  	  </div>
-  	  <div class="buttons">
-  	  <div class="loginfield"><%= f.submit "Log in" %></div>
-		 	<div class="loginfield"><%= link_to "Create New Account", new_user_path %></div>
-		 	</div>
+
+    	<%= f.label :email, class: 'input' %>
+    	<%= f.email_field :email, class: 'input' %>
+
+
+    	<%= f.label :password, class: 'input' %>
+    	<%= f.password_field :password, class: 'input' %>
+
+
+<%= f.submit "Log in", class: 'input-button' %>
+<%= link_to "Create New Account", new_user_path, class: 'input' %>
+
 	<% end %>
 </div>
