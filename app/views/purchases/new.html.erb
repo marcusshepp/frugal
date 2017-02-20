@@ -1,13 +1,18 @@
 New Purchase
 
+<div class="new-purchase">
+  <div class="purchase-header">
+    <h3>New Purchase</h3>
+  </div>
 <%= form_for(@purchase) do |f| %>
-	<%= f.label :amount %>
+	<%= f.label :amount, class: 'input' %>
 	<% if not :item_id%>
-		<%= f.number_field :amount %>
+		<%= f.number_field :amount, class: 'input' %>
 	<% end %>
 	<% if :item_id%>
-		<%= f.number_field :amount, :value => Item.all.select{|c| c.id==params[:item_id]}.first.price%>
+		<%= f.number_field :amount, class: 'input'%>
 	<% end %>
-	<%= f.select :item_id, options_for_select(Item.all.map{|c|[c.name, c.id]})%>
-	<%= f.submit %>
+	<%= f.select :item_id, options_for_select(Item.all.map{|c|[c.name, c.id]}), class: 'select-bar'%>
+	<%= f.submit class: 'input-button' %>
 <% end %>
+</div>
