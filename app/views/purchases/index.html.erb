@@ -1,3 +1,4 @@
+<% if current_user %>
 
 <% @purchases.each do |purchase| %>
 <table>
@@ -8,8 +9,12 @@
 
 <tr>
   <td><%= purchase.amount %></td>
+  <td><%= Item.all.select{|c| c.id==purchase.item_id}.first.name %></td>
   <td><%= link_to 'Edit', edit_purchase_path(purchase) %></td>
   <td><%= link_to 'Show', purchase_path(purchase) %></td>
 </tr>
 <% end %>
 </table>
+<%= link_to 'New Purchase', new_purchase_path %>
+
+<% end %>
