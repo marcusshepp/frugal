@@ -1,20 +1,21 @@
 <% if current_user %>
-<% @items.each do |item| %>
-<table>
-  <tr>
-    <th>Item</th>
-    <th>Price</th>
-    <th>Category</th>
-
-<tr>
-  <td><%= item.name %></td>
-  <td><%= item.price %></td>
-  <td><%= Category.all.select{|c| c.id==item.category_id}.first.name %></td>
-  <td><%= link_to 'Edit', edit_item_path(item) %></td>
-  <td><%= link_to 'Purchase', purchase_path(item) %></td>
-</tr>
-<% end %>
-</table>
-<%= link_to 'Create Item', new_item_path %>
-
+<div id="itemsDiv">
+	<% @items.each do |item| %>
+		<table id="itemsTable">
+  		<tr>
+    		<th>Item</th>
+    		<th>Price</th>
+    		<th>Category</th>
+    	</tr>
+			<tr>
+			  <td><%= item.name %></td>
+			  <td><%= item.price %></td>
+			  <td><%= Category.all.select{|c| c.id==item.category_id}.first.name %></td>
+			  <td><%= link_to 'Edit', edit_item_path(item) %></td>
+			  <td><%= link_to 'Purchase', purchase_path(item) %></td>
+			</tr>
+	<% end %>
+		</table>
+</div>
+<%= button_to "Create Item", new_item_path, :method => "get", class: 'input-button' %>
 <% end %>
