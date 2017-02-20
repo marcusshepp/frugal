@@ -15,7 +15,8 @@
  */
 
 body{
-	background-color: #55c094;
+	background-color: #f4f4f4;
+	/*background-color: #55c094;*/
 	color: black;
 	font-family: 'Lato', sans-serif;
 }
@@ -31,24 +32,15 @@ a{
 	margin: 0px 0px 0px 0px;
 }
 
-#headlink{
-	color: black;
+ul li a{
+color: white;
+text-decoration: none;
 }
-
-#cont{
-	margin: 35px;
-}
-#cont ul li{
-	background-color: #71cad0;
-	width:150px;
-	border:1px solid white;
-	height:50px;
-	line-height:50px;
-	text-align:center;
-	color:white;
-	font-size:18px;
-	float: left;
-	bottom: 50;
+ul li a:hover{
+	-webkit-transition-duration: 0.4s;
+/* Safari */
+transition-duration: 0.4s;
+color: #0097A7;
 }
 #menu{
 	margin: auto;
@@ -60,4 +52,94 @@ a{
 .content{
 	top:100px;
 	position: relative;
+}
+li img{
+    width:100px;
+
+
+}
+.li-container{
+    width:50%;
+    margin:0 auto;
+}
+
+nav{
+    font-family: 'Lato', sans-serif;
+    padding:0px 0;
+    margin:-16px;
+    margin-bottom:10px;
+}
+.navbar a{
+		color: white;
+		text-decoration: none;
+}
+nav ul{
+    background-color:#0097A7;
+    overflow: hidden;
+    color:white;
+    padding:0;
+    text-align:center;
+    -webit-kittransistion:max-height 0.1s;
+    -ms-transistion:max-height 0.1s;
+    -moz-transistion:max-height 0.1s;
+    -o-transistion:max-height 0.1s;
+    transistion:max-height 0.1s;
+}
+
+nav ul li{
+    display:inline-block;
+    padding:20px;
+		text-decoration:none;
+}
+#headlink a{
+	color: white;
+}
+nav ul li a:hover{
+    color:#83c055;
+
+}
+.handle{
+    width:100%;
+    background:black;
+    text-align:left;
+    box-sizing:border-box;
+    padding:15px 10px;
+    cursor:pointer;
+    color:white;
+    display:none;
+    margin:-18px 0;
+    margin-bottom:20px;
+}
+.handle img{
+    position:absolute;
+    right:0px;
+    width:20px;
+    margin:-30px 0;
+    padding:0px;
+}
+
+@media screen and (max-width:580px){
+    .showing{
+	padding:0;
+	max-height:30em;
+	max-width:100%;
+    }
+    nav ul{
+	max-height:0px;
+    }
+    nav ul li{
+	box-sizing: border-box;
+	width:100%;
+	padding:15px;
+	margin:0 auto;
+    }
+    .handle{
+			height: 70px;
+	display:block;
+    }
+		.handle p{
+			margin-top: 5%;
+		}
+
+
 }
