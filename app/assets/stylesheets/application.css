@@ -17,6 +17,7 @@
 body{
 	background-color: #55c094;
 	color: black;
+	font-family: 'Lato', sans-serif;
 }
 
 a{
@@ -60,4 +61,3 @@ a{
 	top:100px;
 	position: relative;
 }
-

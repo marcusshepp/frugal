@@ -1,12 +1,17 @@
 Creating new Item
 
-<%= form_for(@item) do |f| %>
-	<%= f.label :name %>
-	<%= f.text_field :name %>
-	<%= f.label :price %>
-	<%= f.number_field :price %>
-	<%= f.select :category_id, options_for_select(Category.all.map{|c|[c.name, c.id]})%> 
+<div class="new-item">
+	<div class="item-header">
+		<h3>New Item</h3>
+	</div>
+<%= form_for(@item) do |f|%>
+	<%= f.label :name, class: 'input' %><br>
+	<%= f.text_field :name, class: 'input' %><br>
+	<%= f.label :price, class: 'input' %><br>
+	<%= f.number_field :price, class: 'input' %><br>
+	<%= f.select :category_id, options_for_select(Category.all.map{|c|[c.name, c.id]})%><br>
     <%= f.hidden_field :user_id, :value => current_user.id %>
-	<%= link_to "New Category", new_category_url %>
-	<%= f.submit %>
+	<%= link_to "New Category", new_category_url, class: 'input' %><br>
+	<%= f.submit class: 'input-button' %>
 <% end %>
+</div>
