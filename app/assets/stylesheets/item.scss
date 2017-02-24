@@ -23,10 +23,10 @@ margin-left: 12.5%;
 margin-bottom: 2.5%;
 }
 .input-button{
-  height: 25px;
+  height: 30px;
   font-size: 16px;
-  width: 380px;
-  margin-left: 12.5%;
+  width: 100px;
+  margin-left: 32%;
   margin-bottom: 2.5%;
   -webkit-transition-duration: 0.4s;
 /* Safari */
@@ -37,6 +37,7 @@ border: none;
 color: white;
 text-align: center;
 font-size: 16px;
+border-radius: 2px;
 }
 .input-button:hover{
     background-color: #4CAF50;
@@ -45,7 +46,74 @@ font-size: 16px;
 text-align: center;
 background-color: #0097A7;
 color:white;
+width: 80%;
+margin: 0 auto;
 }
+.button-class {
+    -webkit-transition-duration: 0.4s;
+    /* Safari */
+    transition-duration: 0.4s;
+    margin-left: 1px;
+    /* Green */
+    border: none;
+    color: white;
+    text-align: center;
+    font-size: 16px;
+    min-width: 40%;
+    margin-top: 1px;
+}
+#button-edit {
+    background-color: #4CAF50;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+#button-edit:hover {
+    background-color: #6fbf72;
+}
+a:link{
+  text-decoration: none;
+  color: white;
+}
+a:hover{
+  text-decoration: none;
+}
+a:visited{
+  color: white;
+}
+a:active{
+  color: white;
+}
+
+.item-table {
+    max-width: 80%;
+    margin: 0 auto;
+}
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+th {
+    background-color: #0097A7;
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+#button-column{
+  width: 40%;
+  padding: 5px;
+}
+
 #item_category_id{
   margin-left: 12.5%;
 }
@@ -66,4 +134,12 @@ color:white;
 	width: 500px;
 	height: 300px;
 	margin: auto;
+}
+#create-button{
+  margin-left:45%;
+}
+.button_to{
+  margin:0 auto;
+  display: inline-block;
+  padding: 0;
 }
