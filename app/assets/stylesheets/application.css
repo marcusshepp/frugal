@@ -54,7 +54,8 @@ color: #0097A7;
 	position: relative;
 }
 li img{
-    width:100px;
+    width:70px;
+		height: 70px;
 
 
 }
@@ -77,8 +78,9 @@ nav ul{
     background-color:#0097A7;
     overflow: hidden;
     color:white;
-    padding:0;
     text-align:center;
+		height: 90px;
+		/*padding-bottom: */
     -webit-kittransistion:max-height 0.1s;
     -ms-transistion:max-height 0.1s;
     -moz-transistion:max-height 0.1s;
@@ -88,7 +90,7 @@ nav ul{
 
 nav ul li{
     display:inline-block;
-    padding:20px;
+    padding:10px;
 		text-decoration:none;
 }
 #headlink a{
@@ -118,7 +120,7 @@ nav ul li a:hover{
     padding:0px;
 }
 
-@media screen and (max-width:580px){
+@media screen and (max-width:780px){
     .showing{
 	padding:0;
 	max-height:30em;
@@ -130,11 +132,11 @@ nav ul li a:hover{
     nav ul li{
 	box-sizing: border-box;
 	width:100%;
-	padding:15px;
+	padding:0px;
 	margin:0 auto;
     }
     .handle{
-			height: 70px;
+			height: 100px;
 	display:block;
     }
 		.handle p{

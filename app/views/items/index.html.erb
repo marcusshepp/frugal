@@ -1,21 +1,28 @@
-<% if current_user %>
-<div id="itemsDiv">
-	<% @items.each do |item| %>
-		<table id="itemsTable">
-  		<tr>
-    		<th>Item</th>
-    		<th>Price</th>
-    		<th>Category</th>
-    	</tr>
-			<tr>
-			  <td><%= item.name %></td>
-			  <td><%= item.price %></td>
-			  <td><%= Category.all.select{|c| c.id==item.category_id}.first.name %></td>
-			  <td><%= link_to 'Edit', edit_item_path(item) %></td>
-			  <td><%= link_to 'Purchase', purchase_path(item) %></td>
-			</tr>
-	<% end %>
-		</table>
+
+
+
+<!-- Notification Code -->
+<div class="item-header">
+		<h1> Items </h1>
 </div>
-<%= button_to "Create Item", new_item_path, :method => "get", class: 'input-button' %>
+<% if current_user %>
+<div class="item-table">
+        <table>
+            <tr>
+                <th>Item</th>
+                <th>Price</th>
+                <th>Category</th>
+                <th>Actions</th>
+              <% @items.each do |item| %>
+                <tr>
+									<td><%= item.name %></td>
+									<td><%= item.price %></td>
+									<td><%= Category.all.select{|c| c.id==item.category_id}.first.name %></td>
+									<td id="button-column"><%= button_to 'Purchase', purchase_path(item), :class => 'button', :method => 'get', class: 'input-button', :id => 'button-edit' %><%= button_to 'Edit', edit_item_path(item), :class => 'button', :method => 'get', class: 'input-button', :id => 'button-edit'%></td>
+                </tr>
+              <% end %>
+            </tr>
+        </table>
+    </div>
+		<%= button_to "Create Item", new_item_path, :method => "get", class: 'input-button', :id => 'create-button' %>
 <% end %>
