@@ -1,20 +1,27 @@
+<div class="item-header">
+		<h1> Purchases </h1>
+</div>
 <% if current_user %>
+<div id="purchase-table">
+  <table>
+    <tr>
+      <th>Purchase Amount</th>
+      <th>Item Purchased</th>
+      <th>Edit Purchase</th>
+      <th>Show Purchase</th>
+    </tr>
+    <% @purchases.each do |purchase| %>
+    <tr>
+      <td><%= purchase.amount %></td>
+      <td><%= Item.all.select{|c| c.id==purchase.item_id}.first.name %></td>
+      <td><%= button_to 'Edit', edit_purchase_path(purchase), :class => 'button', :method => 'get', :class => 'input-button', :id => 'button-edit'%></td>
+      <td><%= button_to 'Show', purchase_path(purchase), :class => 'button', :method => 'get', :class => 'input-button', :id => 'button-edit'%></td>
 
-<% @purchases.each do |purchase| %>
-<table>
-  <tr>
-    <th>Amount</th>
 
-
-
-<tr>
-  <td><%= purchase.amount %></td>
-  <td><%= Item.all.select{|c| c.id==purchase.item_id}.first.name %></td>
-  <td><%= link_to 'Edit', edit_purchase_path(purchase) %></td>
-  <td><%= link_to 'Show', purchase_path(purchase) %></td>
-</tr>
-<% end %>
-</table>
-<%= link_to 'New Purchase', new_purchase_path %>
+    </tr>
+  <% end %>
+  <tr><td colspan="4"><%= button_to 'New Purchase', new_purchase_path, :class => 'button', :method => 'get', :class => 'input-button'%></td></tr>
+  </table>
+</div>
 
 <% end %>

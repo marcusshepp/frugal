@@ -20,17 +20,22 @@
 									<td><%= item.price %></td>
 									<td><%= Category.all.select{|c| c.id==item.category_id}.first.name %></td>
 									<td id="button-column">
-	                    <form action="/purchase_item" method="post">
-	                        <input type="hidden" name="item_id" value="<%= item.id %>">
-	                        <input type="submit" value="purchase">
-	                    </form>
-	                    <%= button_to 'Edit', edit_item_path(item), :class => 'button', :method => 'get', class: 'input-button', :id => 'button-edit'%>
+	                    <table>
+												<tr>
+													<form action="/purchase_item" method="post">
+		                        <input type="hidden" name="item_id" value="<%= item.id %>">
+		                        <input type="submit" value="purchase" class='input-button' id="purchase-button">
+		                    	</form>
+											</tr>
+												<tr><%= button_to 'Edit', edit_item_path(item), :class => 'button', :method => 'get', :class => 'input-button', :id => 'button-edit'%></tr>
+											</table>
 	                </td>
                 </tr>
                 <% end %>
               <% end %>
             </tr>
+						<tr><td colspan="4"><%= button_to "Create Item", new_item_path, :method => "get", class: 'input-button', :id => 'create-button' %></td></tr>
         </table>
+
     </div>
-		<%= button_to "Create Item", new_item_path, :method => "get", class: 'input-button', :id => 'create-button' %>
 <% end %>
