@@ -20,12 +20,12 @@
 									<td><%= item.price %></td>
 									<td><%= Category.all.select{|c| c.id==item.category_id}.first.name %></td>
 									<td id="button-column">
-                                        <form action="/purchase_item" method="post">
-                                            <input type="hidden" name="item_id" value="<%= item.id %>">
-                                            <input type="submit" value="purchase">
-                                        </form>
-                                        <%= button_to 'Edit', edit_item_path(item), :class => 'button', :method => 'get', class: 'input-button', :id => 'button-edit'%>
-                                    </td>
+	                    <form action="/purchase_item" method="post">
+	                        <input type="hidden" name="item_id" value="<%= item.id %>">
+	                        <input type="submit" value="purchase">
+	                    </form>
+	                    <%= button_to 'Edit', edit_item_path(item), :class => 'button', :method => 'get', class: 'input-button', :id => 'button-edit'%>
+	                </td>
                 </tr>
                 <% end %>
               <% end %>

@@ -41,6 +41,7 @@ class PurchasesController < ApplicationController
       @purchase.amount = 1
       @purchase.item_id = item_id
       @purchase.save!
+      redirect_to purchases_path
   end
 
 

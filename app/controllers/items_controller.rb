@@ -17,7 +17,7 @@ class ItemsController < ApplicationController
     def update
         @item = Item.find(params[:id])
         if @item.update(item_params)
-            redirect_to @item
+            redirect_to @items
         else
             render 'edit'
         end
@@ -27,7 +27,7 @@ class ItemsController < ApplicationController
         @item = Item.new(item_params)
         if @item.save
             flash[:success] = "item created"
-            redirect_to @item
+            redirect_to items_path
         end
     end
 
