@@ -34,6 +34,15 @@ class PurchasesController < ApplicationController
     end
   end
 
+  skip_before_filter :verify_authenticity_token
+  def purchase_item
+      item_id = params[:item_id]
+      @purchase = Purchase.new
+      @purchase.amount = 1
+      @purchase.item_id = item_id
+      @purchase.save!
+  end
+
 
 
   private
