@@ -11,7 +11,7 @@ Creating new Item
 	<%= f.number_field :price, class: 'input' %><br>
 	<%= f.select :category_id, options_for_select(Category.all.map{|c|[c.name, c.id]})%><br>
     <%= f.hidden_field :user_id, :value => current_user.id %>
-	<%= link_to "New Category", new_category_url, class: 'input'%><br>
+	<%= link_to "New Category", new_category_url %><br>
 	<%= f.submit class: 'input-button' %>
 <% end %>
 </div>
