@@ -2,12 +2,30 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-
-#catTable{
+#category-table{
+  max-width: 80%;
+	height: 300px;
 	margin: auto;
-	text-align: left;
 }
 
-#catDiv{
+.category-button{
+  height: 40px;
+  font-size: 16px;
+  width: 145px;
+  -webkit-transition-duration: 0.4s;
+	transition-duration: 0.4s;
+	background-color: red;
+	border: none;
+	color: white;
 	text-align: center;
+	font-size: 13px;
+	border-radius: 2px;
+}
+.category-button:hover{
+    background-color: #4CAF50;
+}
+
+.category-button > a{
+	height: 75px;
+	width: 125px;
 }

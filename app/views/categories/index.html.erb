@@ -1,16 +1,23 @@
+<div class="item-header">
+		<h1> Categories </h1>
+</div>
 <% if current_user %>
+<div id="category-table">
+  <table>
+    <tr>
+      <th>Category</th>
+      <th>Edit Category</th>
+    </tr>
+    <% @categories.each do |category| %>
+    <tr>
+    <td><%= category.name %></td>
+    <td><%= button_to 'Edit', edit_category_path(category), :class => 'button', :method => 'get', :class => 'input-button', :id => 'button-edit'%></td>
+  </tr>
+  <% end %>
 
-<% @categories.each do |category| %>
-<table>
-  <tr>
-    <th>Category</th>
-<tr>
-  <td><%= category.name %></td>
-  <td><%= link_to 'Edit', edit_category_path(category) %></td>
-</tr>
-<% end %>
-</table>
-<%= link_to 'Create Category', new_category_path %>
+  <tr><td colspan="4" style="text-align:left;"><%= button_to "Create Category", new_category_path, :method => "get", class: 'input-button', :id => 'create-button' %></td></tr>
+  </table>
+</div>
 <% end %>
 <% if not current_user %>
 <%= render 'sessions/new.html.erb' %>
