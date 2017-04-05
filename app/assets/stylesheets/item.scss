@@ -25,9 +25,9 @@ margin-bottom: 2.5%;
 .input-button{
   height: 30px;
   font-size: 16px;
-  width: 100px;
-  margin-left: 32%;
-  margin-bottom: 2.5%;
+  width: 145px;
+  // margin-left: 32%;
+  // margin-bottom: 2.5%;
   -webkit-transition-duration: 0.4s;
 /* Safari */
 transition-duration: 0.4s;
@@ -66,6 +66,11 @@ margin: 0 auto;
     background-color: #4CAF50;
     margin-left: 5px;
     margin-right: 5px;
+}
+#purchase-button{
+  background-color: #4CAF50;
+  margin-left: 5px;
+  margin-right: 5px;
 }
 #button-edit:hover {
     background-color: #6fbf72;
@@ -106,6 +111,7 @@ tr:nth-child(even) {
   padding: 5px;
 }
 
+
 #item_category_id{
   margin-left: 12.5%;
 }
@@ -127,11 +133,13 @@ tr:nth-child(even) {
 	height: 300px;
 	margin: auto;
 }
-#create-button{
-  margin-left:45%;
-}
+
 .button_to{
   margin:0 auto;
   display: inline-block;
   padding: 0;
+}
+
+form{
+  text-align: left;
 }
