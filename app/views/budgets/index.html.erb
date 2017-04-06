@@ -13,7 +13,8 @@
   <tr>
     <td><%= budget.total_amount %></td>
     <td><%= budget.current_amount %></td>
-    <td><%= link_to 'Edit', edit_budget_path(budget) %></td>
+		<td><%= button_to 'Edit Budget', edit_budget_path(budget), :class => 'button', :method => 'get', :class => 'input-button', :id => 'button-edit'%></td>
+
   </tr>
   <% end %>
   <tr><td colspan="4"><%= button_to 'Create Budget', new_budget_path, :class => 'button', :method => 'get', :class => 'input-button'%></td></tr>
