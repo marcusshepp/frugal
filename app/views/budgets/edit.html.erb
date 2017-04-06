@@ -1,35 +1,42 @@
-<h1>Editing Budget</h1>
+<div style="margin: 0 auto; width: 50%; background-color: white;">
+  <div style="margin: 0 auto; width: 50%;">
+    <%= form_for :budget, url: budget_path(@budget), method: :patch do |f| %>
+      <div class="item-header">
+        <h1>Editing Budget</h1>
+      </div>
+      <% if @budget.errors.any? %>
+        <div id="error_explanation">
+          <h2>
+            <%= pluralize(@budget.errors.count, "error") %> prohibited
+            this budget from being saved:
+          </h2>
+          <ul>
+            <% @budget.errors.full_messages.each do |msg| %>
+              <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
 
-<%= form_for :budget, url: budget_path(@budget), method: :patch do |f| %>
+      <div>
+        <p>
+          <%= f.label :total_amount %><br>
+          <%= f.number_field :total_amount %>
+        </p>
 
-  <% if @budget.errors.any? %>
-    <div id="error_explanation">
-      <h2>
-        <%= pluralize(@budget.errors.count, "error") %> prohibited
-        this budget from being saved:
-      </h2>
-      <ul>
-        <% @budget.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
+        <p>
+          <%= f.label :current_amount %><br>
+          <%= f.number_field :current_amount %>
+        </p>
+      </div>
+      <div>
+            <%= f.submit :class => 'input-button', :id => 'create-button' %>
         <% end %>
-      </ul>
-    </div>
-  <% end %>
+        <div style="padding-bottom: 5px; padding-top:5px;">
+          <%= button_to "Delete Budget", @budget, :method => :delete, :class => 'input-button', :id => 'create-button' %>
+        </div>
+        <%= button_to 'Back', budgets_path, :class => 'button', :method => 'get', :class => 'input-button', :id => 'create-button'%>
+      </div>
 
-  <p>
-    <%= f.label :total_amount %><br>
-    <%= f.number_field :total_amount %>
-  </p>
-
-  <p>
-    <%= f.label :current_amount %><br>
-    <%= f.number_field :current_amount %>
-  </p>
-
-  <p>
-    <%= f.submit %>
-  </p>
-
-<% end %>
-
-<%= link_to 'Back', budgets_path %>
+  </div>
+</div>
