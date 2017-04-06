@@ -3,6 +3,12 @@ class CategoriesController < ApplicationController
         @category = Category.new
     end
 
+    def destroy
+        @category = Category.find(params[:id])
+        @category.destroy
+        redirect_to categories_path
+    end
+
     def create
         @category = Category.new(category_params)
         if @category.save
