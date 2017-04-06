@@ -13,11 +13,10 @@
 ActiveRecord::Schema.define(version: 20170124183043) do
 
   create_table "budgets", force: :cascade do |t|
-    t.decimal  "total_amount"
-    t.decimal  "current_amount"
+    t.decimal  "amount"
     t.integer  "user_id"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "categories", force: :cascade do |t|
