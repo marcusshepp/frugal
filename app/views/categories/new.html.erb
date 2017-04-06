@@ -2,10 +2,14 @@
   <div class="category-header">
     <h3>New Category</h3>
   </div>
-<%= form_for(@category) do |f| %>
-    <%= f.label :name, class: 'input'  %>
-    <%= f.text_field :name, class: 'input' %>
-    <%= f.hidden_field :user_id, :value => current_user.id %>
-    <%= f.submit "Submit", class: 'input-button' %>
-<% end %>
+<div style="padding: 1px;">
+  <%= form_for(@category) do |f| %>
+      <%= f.label :name, class: 'input'  %>
+      <%= f.text_field :name, class: 'input' %>
+      <%= f.hidden_field :user_id, :value => current_user.id %>
+      <div style="padding:5px;">
+        <%= f.submit "Submit", class: 'input-button' %>
+      </div>
+  <% end %>
+</div>
 </div>
