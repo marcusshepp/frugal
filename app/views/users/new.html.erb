@@ -3,6 +3,9 @@
     <h2>Create Account</h2>
   </div>
 	<%= form_for(@user) do |f| %>
+	<% if flash[:notice] %>
+		<p style="color: green;"><%= flash[:notice] %></p>
+	<% end %>
 
 			<%= f.label :username, class: 'input' %>
 <%= f.text_field :username, class: 'input' %>
