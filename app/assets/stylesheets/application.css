@@ -62,6 +62,7 @@ li img{
 .li-container{
     width:50%;
     margin:0 auto;
+		padding: 8px;
 }
 
 nav{
