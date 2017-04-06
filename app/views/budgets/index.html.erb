@@ -1,18 +1,23 @@
+<div class="item-header">
+		<h1> Budgets </h1>
+</div>
 <% if current_user %>
-
-<% @budgets.each do |budget| %>
-<table>
+<div id="budgets-table">
+  <table>
+    <tr>
+      <th>Budget</th>
+      <th>Money Left</th>
+      <th>Edit</th>
+    </tr>
+    <% @budgets.each do |budget| %>
   <tr>
-    <th>Budget</th>
-    <th>Money Left</th>
-
-<tr>
-  <td><%= budget.total_amount %></td>
-  <td><%= budget.current_amount %></td>
-  <td><%= link_to 'Edit', edit_budget_path(budget) %></td>
-</tr>
-<% end %>
-</table>
-<%= link_to 'Create Budget', new_budget_path %>
+    <td><%= budget.total_amount %></td>
+    <td><%= budget.current_amount %></td>
+    <td><%= link_to 'Edit', edit_budget_path(budget) %></td>
+  </tr>
+  <% end %>
+  <tr><td colspan="4"><%= button_to 'Create Budget', new_budget_path, :class => 'button', :method => 'get', :class => 'input-button'%></td></tr>
+  </table>
+</div>
 
 <% end %>

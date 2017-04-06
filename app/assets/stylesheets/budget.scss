@@ -12,3 +12,25 @@
   background-color: #0097A7;
   color:white;
 }
+
+#budgets-table{
+  max-width: 80%;
+  height: 300px;
+  margin: auto;
+}
+.input-button{
+  height: 30px;
+  font-size: 16px;
+  width: 145px;
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+  background-color: red;
+  border: none;
+  color: white;
+  text-align: center;
+  font-size: 16px;
+  border-radius: 2px;
+}
+.input-button:hover{
+    background-color: #4CAF50;
+}
