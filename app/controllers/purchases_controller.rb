@@ -6,8 +6,7 @@ class PurchasesController < ApplicationController
   def create
       @purchase = Purchase.new(purchase_params)
       if @purchase.save
-        flash[:success] = "Purchase Made!"
-        redirect_to @purchase
+        redirect_to purchases_path
       else
         flash[:failure] = "Failed"
       end

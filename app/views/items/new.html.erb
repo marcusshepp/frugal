@@ -1,5 +1,3 @@
-Creating new Item
-
 <div class="new-item">
 	<div class="item-header">
 		<h3>New Item</h3>
@@ -10,8 +8,11 @@ Creating new Item
 	<%= f.label :price, class: 'input' %><br>
 	<%= f.number_field :price, class: 'input' %><br>
 	<%= f.select :category_id, options_for_select(Category.all.map{|c|[c.name, c.id]})%><br>
-    <%= f.hidden_field :user_id, :value => current_user.id %>
-	<%= link_to "New Category", new_category_url %><br>
-	<%= f.submit class: 'input-button' %>
+  <%= f.hidden_field :user_id, :value => current_user.id %>
+	<div style="padding: 5px;">
+		<%= f.submit class: 'input-button' %>
+
 <% end %>
+<%= button_to 'New Category', new_category_url, :class => 'button', :method => 'get', :class => 'input-button', :id => 'create-button'%>
+</div>
 </div>

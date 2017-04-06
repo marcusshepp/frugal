@@ -8,16 +8,12 @@
       <th>Purchase Amount</th>
       <th>Item Purchased</th>
       <th>Edit Purchase</th>
-      <th>Show Purchase</th>
     </tr>
     <% @purchases.each do |purchase| %>
     <tr>
       <td><%= purchase.amount %></td>
       <td><%= Item.all.select{|c| c.id==purchase.item_id}.first.name %></td>
       <td><%= button_to 'Edit', edit_purchase_path(purchase), :class => 'button', :method => 'get', :class => 'input-button', :id => 'button-edit'%></td>
-      <td><%= button_to 'Show', purchase_path(purchase), :class => 'button', :method => 'get', :class => 'input-button', :id => 'button-edit'%></td>
-
-
     </tr>
   <% end %>
   <tr><td colspan="4"><%= button_to 'New Purchase', new_purchase_path, :class => 'button', :method => 'get', :class => 'input-button'%></td></tr>
