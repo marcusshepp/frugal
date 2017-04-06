@@ -29,7 +29,7 @@ class BudgetsController < ApplicationController
       @budget.current_amount = @budget.total_amount
       if @budget.save
           flash[:success] = "New Budget Recorded"
-          redirect_to @budget
+          redirect_to budgets_path
       end
   end
 

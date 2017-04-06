@@ -1,12 +1,15 @@
-New Budget
 <div class="new-budget">
   <div class="budget-header">
-    <h3>New Category</h3>
+    <h3>New Budget</h3>
   </div>
-<%= form_for(@budget) do |f| %>
-  <%= f.label :total_amount, class: 'input' %>
-  <%= f.number_field :total_amount, class: 'input' %>
-  <%= f.hidden_field :user_id, :value => current_user.id %>
-  <%= f.submit class: 'input-button'%>
-<% end %>
+<div style="padding: 1px;">
+  <%= form_for(@budget) do |f| %>
+    <%= f.label :total_amount, class: 'input' %>
+    <%= f.number_field :total_amount, class: 'input' %>
+    <%= f.hidden_field :user_id, :value => current_user.id %>
+    <div style="padding: 5px;">
+      <%= f.submit class: 'input-button'%>
+    </div>
+  <% end %>
+</div>
 </div>
