@@ -4,7 +4,9 @@
   </div>
 	<%= form_for(@user) do |f| %>
 	<% if flash[:notice] %>
-		<p style="color: green;"><%= flash[:notice] %></p>
+		<p style="color: black; background-color:red;"><%= flash[:notice] %></p>
+  <% else %>
+    <p style="color: black; background-color:red;"></p>
 	<% end %>
 
 			<%= f.label :username, class: 'input' %>
