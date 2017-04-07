@@ -3,6 +3,12 @@ class PurchasesController < ApplicationController
     @purchase = Purchase.new
   end
 
+  def destroy
+      @purchase = Purchase.find(params[:id])
+      @purchase.destroy
+      redirect_to purchases_path
+  end
+
   def create
       @purchase = Purchase.new(purchase_params)
       if @purchase.save
