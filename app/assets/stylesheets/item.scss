@@ -62,6 +62,25 @@ margin: 0 auto;
     min-width: 40%;
     margin-top: 1px;
 }
+
+.item-buttons{
+  background-color: #4CAF50;
+  height: 30px;
+  font-size: 16px;
+  width: 145px;
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+  border: none;
+  color: white;
+  text-align: center;
+  font-size: 16px;
+  border-radius: 2px;
+}
+
+.item-buttons:hover{
+  background-color: #6fbf72;
+}
+
 #button-edit {
     background-color: #4CAF50;
     margin-left: 5px;
