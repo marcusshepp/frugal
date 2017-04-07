@@ -17,15 +17,15 @@
 									<td><%= item.price %></td>
 									<td><%= Category.all.select{|c| c.id==item.category_id}.first.name %></td>
 									<td id="button-column">
-	                    <table>
-												<tr>
-													<form action="/purchase_item" method="post">
-		                        <input type="hidden" name="item_id" value="<%= item.id %>">
-		                        <input type="submit" value="purchase" class='input-button' id="purchase-button">
-		                    	</form>
-											</tr>
-												<tr><%= button_to 'Edit', edit_item_path(item), :class => 'button', :method => 'get', :class => 'input-button', :id => 'button-edit'%></tr>
-											</table>
+										<div style="display: block;">
+											<div style="display: inline-block;">
+												<form action="/purchase_item" method="post">
+													<input type="hidden" name="item_id" value="<%= item.id %>">
+													<input type="submit" value="purchase" class="item-buttons">
+												</form>
+											</div>
+										<div style="display: inline-block;"><%= button_to 'Edit', edit_item_path(item), :class => 'button', :method => 'get',  :class => "item-buttons"%></div>
+										</div>
 	                </td>
                 </tr>
                 <% end %>
