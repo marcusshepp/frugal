@@ -7,36 +7,57 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
+  <!-- Navigation -->
+<div class="b-nav">
+<li><%= link_to image_tag("logo.png", :alt => "empty", :width => 98, :height =>98), login_path, class: 'logo-img' %></li>
+<li><%= link_to 'Items', items_path, :id=>"headlink", class: 'b-link' %></li>
+<li><%= link_to 'Categories	', categories_path, :id=>"headlink", class: 'b-link'%></li>
+<li><%= link_to 'Budget', budgets_path, :id=>"headlink", class: 'b-link'%></li>
+<li><%= link_to 'Purchases', purchases_path, :id=>"headlink", class: 'b-link'%></li>
+<% if current_user %>
+  <li><%= render 'shared/header',:id=>"headlink", class: 'b-link' %></li>
+<% end %>
+<% if not current_user %>
+<li><%= link_to 'Login', login_path, :id=>"headlink", class: 'b-link'%></li>
+<% end %>
+
+</div>
+
+<!-- Burger-Icon -->
+<div class="b-container">
+<div class="b-menu">
+  <div class="b-bun b-bun--top"></div>
+  <div class="b-bun b-bun--mid"></div>
+  <div class="b-bun b-bun--bottom"></div>
+</div>
+
+<!-- Burger-Brand -->
+<a href="/items" class="b-brand">FRUGAL</a>
+</div>
+<div class="container"><div class="menu-icon"><span></span></div></div>
 
   <body>
-    <div class="navbar">
-      <nav>
-        <ul>
-  	<div class="li-container">
-      <ul>
-        <li><%= link_to image_tag("logo.png", :alt => "empty", :width => 98, :height =>98), login_path, class: 'logo-img' %></li>
-        <li><%= link_to 'Items', items_path, :id=>"headlink" %></li>
-        <li><%= link_to 'Categories	', categories_path, :id=>"headlink"%></li>
-        <li><%= link_to 'Budget', budgets_path, :id=>"headlink"%></li>
-        <li><%= link_to 'Purchases', purchases_path, :id=>"headlink"%></li>
-        <% if current_user %>
-          <li><%= render 'shared/header',:id=>"headlink" %></li>
-       <% end %>
-       <% if not current_user %>
-        <li><%= link_to 'Login', login_path, :id=>"headlink"%></li>
-       <% end %>
-  	</div>
-        </ul>
-      </nav>
-    </div>
     <div class="content">
 	      <%= yield %>
       </div>
   </body>
+
 </html>
 
 <script>
-$('.handle').on('click',function(){
-   $('nav ul').toggleClass('showing')
-});
+
+'use strict';
+
+(function() {
+  var body = document.body;
+  var burgerMenu = document.getElementsByClassName('b-menu')[0];
+  var burgerContain = document.getElementsByClassName('b-container')[0];
+  var burgerNav = document.getElementsByClassName('b-nav')[0];
+
+  burgerMenu.addEventListener('click', function toggleClasses() {
+    [body, burgerContain, burgerNav].forEach(function (el) {
+      el.classList.toggle('open');
+    });
+  }, false);
+})();
 </script>
