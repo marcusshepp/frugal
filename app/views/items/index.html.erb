@@ -1,38 +1,48 @@
-<!-- Notification Code -->
-<div class="item-header">
-		<h1> Items </h1>
-</div>
 <% if current_user %>
-<div class="item-table">
-        <table>
-            <tr>
-                <th>Item</th>
-                <th>Price</th>
-                <th>Category</th>
-                <th>Actions</th>
-              <% @items.each do |item| %>
-                <% if item.user_id == @current_user.id %>
-                <tr>
-									<td><%= item.name %></td>
-									<td><%= item.price %></td>
-									<td><%= Category.all.select{|c| c.id==item.category_id}.first.name %></td>
-									<td id="button-column">
-										<div style="display: block;">
-											<div style="display: inline-block;">
-												<form action="/purchase_item" method="post">
-													<input type="hidden" name="item_id" value="<%= item.id %>">
-													<input type="submit" value="purchase" class="item-buttons">
-												</form>
-											</div>
-										<div style="display: inline-block;"><%= button_to 'Edit', edit_item_path(item), :class => 'button', :method => 'get',  :class => "item-buttons"%></div>
-										</div>
-	                </td>
-                </tr>
-                <% end %>
-              <% end %>
-            </tr>
-						<tr><td colspan="4"><%= button_to "Create Item", new_item_path, :method => "get", class: 'input-button', :id => 'create-button' %></td></tr>
-        </table>
+<section>
+  <!--for demo wrap-->
+  <h1>Items</h1>
+  <div class="tbl-header">
+    <table cellpadding="0" cellspacing="0" border="0">
+      <thead>
+        <tr>
+          <th>Item</th>
+          <th>Price</th>
+          <th>Category</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+    </table>
+  </div>
+  <div class="tbl-content">
+    <table cellpadding="0" cellspacing="0" border="0">
+      <tbody>
+				<% @items.each do |item| %>
+					<% if item.user_id == @current_user.id %>
+        <tr>
+					<td><p><%= item.name %></p></td>
+					<td><p><%= item.price %></p></td>
+					<td><p><%= Category.all.select{|c| c.id==item.category_id}.first.name %></p></td>
+					<td id="button-column">
+						<div style="display: block;">
+							<div style="display: inline-block;">
+								<form action="/purchase_item" method="post">
+									<input type="hidden" name="item_id" value="<%= item.id %>">
+									<input type="submit" value="purchase" class="item-buttons">
+								</form>
+							</div>
+						<div style="display: inline-block;"><%= button_to 'Edit', edit_item_path(item), :class => 'button', :method => 'get',  :class => "item-buttons"%></div>
+						</div>
+					</td>
+				<% end %>
+			<% end %>
 
-    </div>
+		</tr>
+		<td colspan="4"><%= button_to "Create Item", new_item_path, :method => "get", class: 'input-button', :id => 'create-button' %></td>
+      </tbody>
+    </table>
+  </div>
+</section>
 <% end %>
+
+<!-- follow me template -->
