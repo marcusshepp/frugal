@@ -13,136 +13,26 @@
  *= require_tree .
  *= require_self
  */
-
-body{
-	background-color: #f4f4f4;
-	/*background-color: #55c094;*/
-	color: black;
-	font-family: 'Lato', sans-serif;
-}
-
-a{
-	color:blue;
-	font-style: underline;
-	font-weight: bold;
-}
-
-#cont ul{
-	list-style:none;
-	margin: 0px 0px 0px 0px;
-}
-
-ul li a{
-color: white;
-text-decoration: none;
-}
-ul li a:hover{
-	-webkit-transition-duration: 0.4s;
-/* Safari */
-transition-duration: 0.4s;
-color: #0097A7;
-}
-#menu{
-	margin: auto;
-}
-#logo{
-	width:1px;
-	height:1px;
-}
-.content{
-	top:100px;
-	position: relative;
-}
-li img{
-    width:70px;
-		height: 70px;
-
-
-}
-.li-container{
-    width:50%;
-    margin:0 auto;
-		padding: 8px;
-}
-
-nav{
-    font-family: 'Lato', sans-serif;
-    padding:0px 0;
-    margin:-16px;
-    margin-bottom:10px;
-}
-.navbar a{
-		color: white;
-		text-decoration: none;
-}
-nav ul{
-    background-color:#0097A7;
-    overflow: hidden;
-    color:white;
-    text-align:center;
-		height: 90px;
-		/*padding-bottom: */
-    -webit-kittransistion:max-height 0.1s;
-    -ms-transistion:max-height 0.1s;
-    -moz-transistion:max-height 0.1s;
-    -o-transistion:max-height 0.1s;
-    transistion:max-height 0.1s;
-}
-
-nav ul li{
-    display:inline-block;
-    padding:10px;
-		text-decoration:none;
-}
-#headlink a{
-	color: white;
-}
-nav ul li a:hover{
-    color:#83c055;
-
-}
-.handle{
-    width:100%;
-    background:black;
-    text-align:left;
-    box-sizing:border-box;
-    padding:15px 10px;
-    cursor:pointer;
-    color:white;
-    display:none;
-    margin:-18px 0;
-    margin-bottom:20px;
-}
-.handle img{
-    position:absolute;
-    right:0px;
-    width:20px;
-    margin:-30px 0;
-    padding:0px;
-}
-
-@media screen and (max-width:780px){
-    .showing{
-	padding:0;
-	max-height:30em;
-	max-width:100%;
-    }
-    nav ul{
-	max-height:0px;
-    }
-    nav ul li{
-	box-sizing: border-box;
-	width:100%;
-	padding:0px;
-	margin:0 auto;
-    }
-    .handle{
-			height: 100px;
-	display:block;
-    }
-		.handle p{
-			margin-top: 5%;
-		}
-
-
-}
+ .made-with-love {
+   margin-top: 40px;
+   padding: 10px;
+   clear: left;
+   text-align: center;
+   font-size: 10px;
+   font-family: arial;
+   color: #fff;
+ }
+ .made-with-love i {
+   font-style: normal;
+   color: #F50057;
+   font-size: 14px;
+   position: relative;
+   top: 2px;
+ }
+ .made-with-love a {
+   color: #fff;
+   text-decoration: none;
+ }
+ .made-with-love a:hover {
+   text-decoration: underline;
+ }
