@@ -1,29 +1,23 @@
-<div class="new-user">
-  <div class="user-header">
-    <h2>Create Account</h2>
-  </div>
-	<%= form_for(@user) do |f| %>
+
+
+    <div class="wrapper">
+    <div class="container" style="margin-top:-100px;">
+      <h2>Create Account</h2>
+	<%= form_for(@user, class: 'form') do |f| %>
 	<% if flash[:notice] %>
 		<p style="color: black; background-color:red;"><%= flash[:notice] %></p>
   <% else %>
     <p style="color: black; background-color:red;"></p>
 	<% end %>
-
 			<%= f.label :username, class: 'input' %>
-<%= f.text_field :username, class: 'input' %>
-
-
+      <%= f.text_field :username, class: 'input' %>
 				<%= f.label :email, class: 'input' %>
 				<%= f.text_field :email, class: 'input' %>
-
-
 				<%= f.label :password, class: 'input' %>
 				<%= f.password_field :password, class: 'input' %>
-
-
 		    <%= f.label :password_confirmation, "Confirmation", class: 'input' %>
    			<%= f.password_field :password_confirmation, class: 'input' %>
-        <div style="padding:25px;"><%= f.submit "Create Account", class: 'input-button' %></div>
-
+    <%= f.submit "Create Account"%>
 	<% end %>
+</div>
 </div>
