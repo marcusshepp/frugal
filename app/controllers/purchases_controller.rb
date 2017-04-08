@@ -41,11 +41,18 @@ class PurchasesController < ApplicationController
 
   skip_before_filter :verify_authenticity_token
   def purchase_item
-      item_id = params[:item_id]
-      @purchase = Purchase.new
-      @purchase.amount = 1
-      @purchase.item_id = item_id
-      @purchase.save!
+      if @budget.present?
+        item_id = params[:item_id]
+        @budget.current_amount - item_id.price
+        @purchase = Purchase.new
+        @purchase.item_id = item_id
+        @purchase.save!
+      else
+        item_id = params[:item_id]
+        @purchase = Purchase.new
+        @purchase.item_id = item_id
+        @purchase.save!
+      end
       redirect_to purchases_path
   end
 
