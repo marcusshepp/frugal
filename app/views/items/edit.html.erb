@@ -36,7 +36,9 @@
       <%= f.submit :class => 'button', :class => 'input-button', :id => 'create-button'%>
       <% end %>
       <div style="padding-bottom: 5px;padding-top: 5px;">
-        <%= button_to "Delete Item", @item, :method => :delete, :class => 'input-button', :id => 'create-button' %>
+          <% if Purchase.select{ |p| p.item_id == @item.id }.length < 1 %>
+            <%= button_to "Delete Item", @item, :method => :delete, :class => 'input-button', :id => 'create-button' %>
+          <% end %>
       </div>
       <%= button_to 'Back', items_path, :class => 'button', :method => 'get', :class => 'input-button', :id => 'create-button'%>
       </div>
