@@ -28,7 +28,9 @@
         </p>
         <% end %>
         <div style="padding-bottom: 5px;">
-          <%= button_to "Delete Category", @category, :method => :delete, :class => 'input-button', :id => 'create-button' %>
+            <% if Item.select{ |i| i.category_id == @category.id }.length < 1 %>
+                <%= button_to "Delete Category", @category, :method => :delete, :class => 'input-button', :id => 'create-button' %>
+            <% end %>
         </div>
         <%= button_to 'Back', categories_path, :class => 'button', :method => 'get', :class => 'input-button', :id => 'create-button'%>
       </div>
