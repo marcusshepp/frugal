@@ -1,15 +1,10 @@
-<div class="new-category">
-  <div class="category-header">
-    <h3>New Category</h3>
-  </div>
-<div style="padding: 1px;">
+<div class="container" style="margin-top: -400px;">
   <%= form_for(@category) do |f| %>
-      <%= f.label :name, class: 'input'  %>
-      <%= f.text_field :name, class: 'input' %>
+      <%= f.label :name, class: 'input', :style => 'font-size: 20px; margin-left: 250px;'  %>
+      <%= f.text_field :name, class: 'input', :style => "color: #4CAF50;border: 1px solid #aaa;" %>
       <%= f.hidden_field :user_id, :value => current_user.id %>
-      <div style="padding:5px;">
-        <%= f.submit "Submit", class: 'input-button' %>
-      </div>
+
+        <%= f.submit "Submit", :style => "background: #4CAF50;" %>
+
   <% end %>
-</div>
 </div>
