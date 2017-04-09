@@ -42,8 +42,8 @@ class PurchasesController < ApplicationController
   skip_before_filter :verify_authenticity_token
   def purchase_item
       @budget = Budget.order("created_at").last
+      item_id = params[:item_id]
       if @budget
-        item_id = params[:item_id]
         @item = Item.find_by_id(item_id)
         @budget.current_amount -= @item.price
         @budget.save!
