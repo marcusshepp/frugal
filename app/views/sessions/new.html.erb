@@ -15,22 +15,20 @@
 </head>
 
 <body>
+
   <div class="wrapper">
-	<div class="container">
-		<h1>Log In to Frugal</h1>
+    <h1>Log In to Frugal</h1>
+	<div class="container" style="margin-top: -190px;">
 
-		<!-- <form class="form">
-			<input type="text" placeholder="Username">
-			<input type="password" placeholder="Password">
-			<button type="submit" id="login-button">Login</button>
-		</form> -->
 
-    <%= form_for(:session, url: login_path, class: 'form') do |f|  %>
-    	<%= f.email_field :email, placeholder:'Email' %>
-    	<%= f.password_field :password, placeholder:'Password' %>
-      <%= f.submit "Log in" %>
+    <%= form_for(:session, url: login_path, class: 'form', :style => 'margin-top: -200px;') do |f|  %>
+
+    	<%= f.email_field :email, placeholder:'Email', :style => "color: #4CAF50;border: 1px solid #aaa;" %>
+    	<%= f.password_field :password, placeholder:'Password', :style => "color: #4CAF50;border: 1px solid #aaa;" %>
+      <%= f.submit "Log in", :style => "background: #4CAF50;" %>
+      <%= link_to 'Create New Account', new_user_path, :method => 'get'%>
       <% end %>
-      <%= button_to 'Create New Account', new_user_path, :method => 'get', :style => "margin-top: -35px;"%>
+
   </div>
 </div>
 
