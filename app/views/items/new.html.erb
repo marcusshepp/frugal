@@ -1,18 +1,23 @@
-<div class="new-item">
-	<div class="item-header">
-		<h3>New Item</h3>
-	</div>
-<%= form_for(@item) do |f|%>
-	<%= f.label :name, class: 'input' %><br>
-	<%= f.text_field :name, class: 'input' %><br>
-	<%= f.label :price, class: 'input' %><br>
-	<%= f.number_field :price, class: 'input' %><br>
-	<%= f.select :category_id, options_for_select(Category.all.map{|c|[c.name, c.id]})%><br>
-  <%= f.hidden_field :user_id, :value => current_user.id %>
-	<div style="padding: 5px;">
-		<%= f.submit class: 'input-button' %>
 
-<% end %>
-<%= button_to 'New Category', new_category_url, :class => 'button', :method => 'get', :class => 'input-button', :id => 'create-button'%>
-</div>
+
+
+<div class="container" style="margin-top: -400px;">
+
+  <!-- <form id="contact" action="" method="post"> -->
+		<%= form_for(@item) do |f|%>
+			<h3>New Item</h3>
+		   <fieldset>
+			<%= f.text_field :name, placeholder: 'Item Name', :style => '  border: 1px solid #aaa;' %>
+		</fieldset>
+			   <fieldset>
+			<%= f.number_field :price, placeholder: 'Item Price', :style => '  border: 1px solid #aaa;' %>
+   </fieldset>
+			   <fieldset>
+			<%= f.select :category_id, options_for_select(Category.all.map{|c|[c.name, c.id]})%>
+		</fieldset>
+		  <%= f.hidden_field :user_id, :value => current_user.id %>
+				<%= f.submit :style => "background: #4CAF50;" %>
+
+		<% end %>
+  <!-- </form> -->
 </div>
