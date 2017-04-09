@@ -1,46 +1,44 @@
-<div style="margin: 0 auto; width: 50%; background-color: white;">
-  <div style="margin: 0 auto; width: 50%;">
-    <%= form_for :item, url: item_path(@item), method: :patch do |f| %>
-    <div class="item-header">
-      <h3>Editing Item</h3>
-    </div>
-    <% if @item.errors.any? %>
-      <div id="error_explanation">
-        <h2>
-          <%= pluralize(@item.errors.count, "error") %> prohibited
-          this item from being saved:
-        </h2>
-        <ul>
-          <% @item.errors.full_messages.each do |msg| %>
-            <li><%= msg %></li>
-          <% end %>
-        </ul>
-      </div>
-    <% end %>
 
-    <p>
-      <%= f.label :name %><br>
-      <%= f.text_field :name %>
-    </p>
 
-    <p>
-      <%= f.label :price %><br>
-      <%= f.number_field :price %>
-    </p>
-    <p>
-      <%= f.select :category_id, options_for_select(Category.all.map{|c|[c.name, c.id]})%>
-    </p>
+<div class="container" style="margin-top: -400px;">
 
-    <div>
-      <%= f.hidden_field :user_id, :value => current_user.id %>
-      <%= f.submit :class => 'button', :class => 'input-button', :id => 'create-button'%>
+<%= form_for :item, :style => '
+  background: #F9F9F9;
+  padding: 25px;
+  margin: 150px 0;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);', url: item_path(@item), method: :patch do |f| %>
+<h3 style="margin-left:250px;"> Edit Item</h3>
+<% if @item.errors.any? %>
+  <div id="error_explanation">
+    <h2>
+      <%= pluralize(@item.errors.count, "error") %> prohibited
+      this item from being saved:
+    </h2>
+    <ul>
+      <% @item.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
       <% end %>
-      <div style="padding-bottom: 5px;padding-top: 5px;">
-          <% if Purchase.select{ |p| p.item_id == @item.id }.length < 1 %>
-            <%= button_to "Delete Item", @item, :method => :delete, :class => 'input-button', :id => 'create-button' %>
-          <% end %>
-      </div>
-      <%= button_to 'Back', items_path, :class => 'button', :method => 'get', :class => 'input-button', :id => 'create-button'%>
-      </div>
-    </div>
-</div>
+    </ul>
+  </div>
+<% end %>
+
+
+  <%= f.label :name, :style => 'font-size: 20px; margin-left: 270px;' %><br>
+  <%= f.text_field :name, :style => "color: #4CAF50;border: 1px solid #aaa;" %>
+
+
+
+  <%= f.label :price, :style => 'font-size: 20px;margin-left: 270px;' %><br>
+  <%= f.number_field :price, :style => "color: #4CAF50;border: 1px solid #aaa;" %>
+
+
+  <%= f.select :category_id, options_for_select(Category.all.map{|c|[c.name, c.id]})%>
+
+
+  <%= f.hidden_field :user_id, :value => current_user.id %>
+  <%= f.submit :style => "background: #4CAF50;"%>
+  <% end %>
+      <% if Purchase.select{ |p| p.item_id == @item.id }.length < 1 %>
+        <%= button_to "Delete Item", @item, :method => :delete, :style => "background: #4CAF50;" %>
+      <% end %>
+  <%= button_to 'Back', items_path, :method => 'get', :style => "background: #4CAF50;"%>
