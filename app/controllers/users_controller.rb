@@ -14,19 +14,17 @@ class UsersController < ApplicationController
   end
 
 	def create
-		if @user
       if params[:user].present?
               flash[:notice] = "User Already Exists"
       end
-    end
-
 		@user = User.new(user_params)
 		    if @user.save
             log_in @user
             flash[:success] = "Welcome!!!!"
+            flash.discard(:notice)
 			         redirect_to items_url
 		    else
-			         render 'new'
+			         redirect_to :back
 		    end
 
   end
