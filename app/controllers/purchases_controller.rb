@@ -53,6 +53,7 @@ class PurchasesController < ApplicationController
       @purchase.save!
       redirect_to purchases_path
   end
+  helper_method :purchase_item
 
 
 

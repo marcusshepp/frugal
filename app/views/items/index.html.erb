@@ -26,22 +26,27 @@
 					<td id="button-column">
 						<div style="display: block;">
 							<div style="display: inline-block;">
-								<form action="/purchase_item" method="post">
-									<input type="hidden" name="item_id" value="<%= item.id %>">
-									<input type="submit" value="purchase" class="item-buttons">
-								</form>
+                <%= button_to 'Purchase', purchase_item_url(:item_id => item.id), :method => 'post', :style=>'background-color: #4CAF50;' %>
 							</div>
-						<div style="display: inline-block;"><%= button_to 'Edit', edit_item_path(item), :class => 'button', :method => 'get',  :class => "item-buttons"%></div>
+						<div style="display: inline-block;"><%= button_to 'Edit', edit_item_path(item), :method => 'get', :style=>'background-color: #4CAF50;'%></div>
 						</div>
 					</td>
 				<% end %>
 			<% end %>
 
 		</tr>
-		<td colspan="4"><%= button_to "Create Item", new_item_path, :method => "get", class: 'input-button', :id => 'create-button' %></td>
       </tbody>
     </table>
   </div>
+  <%= button_to "Create Item", new_item_path, :method => "get", :style => 'cursor: pointer;
+    width: 100%;
+    border: none;
+    background: #4CAF50;
+    background-color: #4CAF50;
+    color: #FFF;
+    margin: 0 0 5px;
+    padding: 10px;
+    font-size: 15px;'%>
 </section>
 <% end %>
 

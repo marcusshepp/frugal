@@ -1,15 +1,13 @@
-<div class="new-budget">
-  <div class="budget-header">
-    <h3>New Budget</h3>
-  </div>
-<div style="padding: 1px;">
+
+
+
+<div class="container" style="margin-top: -400px;">
   <%= form_for(@budget) do |f| %>
-    <%= f.label :total_amount, class: 'input' %>
-    <%= f.number_field :total_amount, class: 'input' %>
+  <h3 style="margin-left:250px;">New Budget</h3>
+    <%= f.number_field :total_amount, class: 'input', :style => "color: #4CAF50;border: 1px solid #aaa;", placeholder: 'Amount' %>
     <%= f.hidden_field :user_id, :value => current_user.id %>
     <div style="padding: 5px;">
-      <%= f.submit class: 'input-button'%>
+      <%= f.submit :style => "background: #4CAF50;"%>
     </div>
   <% end %>
-</div>
 </div>
