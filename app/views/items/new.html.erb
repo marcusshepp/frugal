@@ -11,7 +11,7 @@
 				<%= f.text_field :name, placeholder: 'Item Name', :style => '  border: 1px solid #aaa;' %>
 			</fieldset>
 				   <fieldset>
-				<%= f.number_field :price, placeholder: 'Item Price', :style => '  border: 1px solid #aaa;' %>
+				<%= f.number_field :price, placeholder: 'Item Price', :style => '  border: 1px solid #aaa;', :step => 0.01 %>
 	   </fieldset>
 				   <fieldset>
 				<%= f.select :category_id, options_for_select(Category.all.map{|c|[c.name, c.id]})%>
