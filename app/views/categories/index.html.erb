@@ -9,10 +9,12 @@
       <th>Edit Category</th>
     </tr>
     <% @categories.each do |category| %>
-    <tr>
-    <td><%= category.name %></td>
-    <td><%= button_to 'Edit', edit_category_path(category), :class => 'button', :method => 'get'%></td>
-  </tr>
+			<% if category.user_id == @current_user.id %>
+				<tr>
+		    <td><%= category.name %></td>
+		    <td><%= button_to 'Edit', edit_category_path(category), :class => 'button', :method => 'get'%></td>
+		  </tr>
+			<% end %>
   <% end %>
 
   <tr><td colspan="4" style="text-align:left;"><%= button_to "Create Category", new_category_path, :method => "get" %></td></tr>
