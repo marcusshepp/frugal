@@ -36,9 +36,11 @@
 
 
   <%= f.hidden_field :user_id, :value => current_user.id %>
+<div>
   <%= f.submit :style => "background: #4CAF50;"%>
   <% end %>
       <% if Purchase.select{ |p| p.item_id == @item.id }.length < 1 %>
         <%= button_to "Delete Item", @item, :method => :delete, :style => "background: #4CAF50;" %>
       <% end %>
   <%= button_to 'Back', items_path, :method => 'get', :style => "background: #4CAF50;"%>
+</div>
