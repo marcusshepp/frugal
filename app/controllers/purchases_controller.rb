@@ -5,7 +5,13 @@ class PurchasesController < ApplicationController
 
   def destroy
       @purchase = Purchase.find(params[:id])
+      @budget = Budget.order("created_at").last
+      @item = Item.find_by_id(@purchase.item_id)
+      @budget.current_amount += @item.price
+      @budget.save!
       @purchase.destroy
+
+
       redirect_to purchases_path
   end
 
