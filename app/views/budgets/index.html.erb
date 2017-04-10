@@ -19,6 +19,7 @@
 			</tr>
 		<% end %>
   <% end %>
+	
 	<% if !@budgets.present? %>
 		<tr><td colspan="4"><%= button_to 'Create Budget', new_budget_path, :method => 'get', :style => "background: #4CAF50;"%></td></tr>
 	<%end%>
