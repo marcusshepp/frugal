@@ -9,8 +9,10 @@ class UsersController < ApplicationController
     end
 
 	def create
-		if params[:user].present?
-            flash[:notice] = "User Already Exists"
+		if @user
+      if params[:user].present?
+              flash[:notice] = "User Already Exists"
+      end
     end
 
 		@user = User.new(user_params)
