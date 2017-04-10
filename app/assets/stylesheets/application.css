@@ -13,6 +13,13 @@
  *= require_tree .
  *= require_self
  */
+ #search{
+   width: 20%;
+   border: 1px solid #ccc;
+   background: #FFF;
+   margin: 0 0 5px;
+   padding: 10px;
+ }
  .made-with-love {
    margin-top: 40px;
    padding: 10px;
