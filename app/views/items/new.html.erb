@@ -5,7 +5,7 @@
 
   <!-- <form id="contact" action="" method="post"> -->
 		<%= form_for(@item) do |f|%>
-			<h3>New Item</h3>
+			<h1 style="color:black;">New Item</h1>
 		   <fieldset>
 			<%= f.text_field :name, placeholder: 'Item Name', :style => '  border: 1px solid #aaa;' %>
 		</fieldset>
@@ -16,7 +16,7 @@
 			<%= f.select :category_id, options_for_select(Category.all.map{|c|[c.name, c.id]})%>
 		</fieldset>
 		  <%= f.hidden_field :user_id, :value => current_user.id %>
-				<%= f.submit :style => "background: #4CAF50;" %>
+				<%= f.submit :style => "background: #4CAF50; color:white;" %>
 
 		<% end %>
   <!-- </form> -->

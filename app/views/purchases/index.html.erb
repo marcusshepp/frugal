@@ -1,4 +1,4 @@
-<div class="item-header">
+<div class="item-header" style="margin-top: -200px;">
 		<h1> Purchases </h1>
 </div>
 <% if current_user %>
@@ -13,10 +13,10 @@
     <tr>
       <td><%= Item.all.select{|c| c.id==purchase.item_id}.first.price %></td>
       <td><%= Item.all.select{|c| c.id==purchase.item_id}.first.name %></td>
-			<td><%= button_to "Delete Purchase", purchase, :method => :delete, :class => 'input-button', :id => 'button-edit' %></td>
+			<td><%= button_to "Delete Purchase", purchase, :method => :delete, :style => "background-color: #4CAF50;" %></td>
     </tr>
   <% end %>
-  <tr><td colspan="4"><%= button_to 'New Purchase', new_purchase_path, :class => 'button', :method => 'get', :class => 'input-button'%></td></tr>
+  <!-- <tr><td colspan="4"><%= button_to 'New Purchase', new_purchase_path, :class => 'button', :method => 'get', :class => 'input-button'%></td></tr> -->
   </table>
 </div>
 
