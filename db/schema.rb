@@ -38,6 +38,7 @@ ActiveRecord::Schema.define(version: 20170124183043) do
 
   create_table "purchases", force: :cascade do |t|
     t.integer  "item_id"
+    t.integer  "user_id"
     t.decimal  "amount"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
