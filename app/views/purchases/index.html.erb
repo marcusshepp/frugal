@@ -2,18 +2,21 @@
 		<h1> Purchases </h1>
 </div>
 <% if current_user %>
+<input type="text" id="search" placeholder="Search purchases" style="color: #4CAF50;">
 <div id="purchase-table">
-  <table>
+  <table id="table">
     <tr>
       <th>Purchase Price</th>
       <th>Item Purchased</th>
+			<th>Category</th>
       <th>Edit Purchase</th>
     </tr>
     <% @purchases.each do |purchase| %>
 		<% if purchase.user_id == @current_user.id %>
-			<tr>
+			<tr id="search-content">
 				<td><%= Item.all.select{|c| c.id==purchase.item_id}.first.price %></td>
 				<td><%= Item.all.select{|c| c.id==purchase.item_id}.first.name %></td>
+				<td><%= Category.all.select{|c| c.id==Item.all.select{|i| i.id==purchase.item_id}.first.category_id}.first.name %></td>
 				<td><%= button_to "Delete Purchase", purchase, :method => :delete, :style => "background-color: #4CAF50;" %></td>
 			</tr>
     <% end %>
@@ -23,3 +26,16 @@
 </div>
 
 <% end %>
+
+
+<script>
+var $rows = $('#table #search-content');
+$('#search').keyup(function() {
+    var val = $.trim($(this).val()).replace(/ +/g, ' ').toLowerCase();
+
+    $rows.show().filter(function() {
+        var text = $(this).text().replace(/\s+/g, ' ').toLowerCase();
+        return !~text.indexOf(val);
+    }).hide();
+});
+</script>
