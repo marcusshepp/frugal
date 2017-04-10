@@ -1,8 +1,12 @@
-<div style="margin: 0 auto; width: 50%; background-color: white;">
-  <div style="margin: 0 auto; width: 50%;">
-    <%= form_for :category, url: category_path(@category), method: :patch do |f| %>
+<div class="container" style="margin-top: -400px;">
+
+    <%= form_for :category, :style => '
+      background: #F9F9F9;
+      padding: 25px;
+      margin: 150px 0;
+      box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);', url: category_path(@category), method: :patch do |f| %>
       <div class="item-header">
-        <h1>Editing Category</h1>
+        <h3 style="margin-left:220px;">Editing Category</h3>
       </div>
       <% if @category.errors.any? %>
         <div id="error_explanation">
@@ -19,21 +23,19 @@
       <% end %>
 
       <p>
-        <%= f.label :name %><br>
-        <%= f.text_field :name %>
+        <%= f.text_field :name, :style => "color: #4CAF50;border: 1px solid #aaa;"%>
       </p>
       <div style="text-align: center;">
         <p>
-          <%= f.submit :class => 'input-button', :id => 'create-button' %>
+          <%= f.submit :style => "background: #4CAF50;"  %>
         </p>
         <% end %>
         <div style="padding-bottom: 5px;">
             <% if Item.select{ |i| i.category_id == @category.id }.length < 1 %>
-                <%= button_to "Delete Category", @category, :method => :delete, :class => 'input-button', :id => 'create-button' %>
+                <%= button_to "Delete Category", @category, :method => :delete,:style => "background: #4CAF50;" %>
             <% end %>
         </div>
-        <%= button_to 'Back', categories_path, :class => 'button', :method => 'get', :class => 'input-button', :id => 'create-button'%>
+        <%= button_to 'Back', categories_path, :method => 'get', :style => "background: #4CAF50;"%>
       </div>
 
-  </div>
 </div>

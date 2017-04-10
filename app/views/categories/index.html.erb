@@ -11,11 +11,11 @@
     <% @categories.each do |category| %>
     <tr>
     <td><%= category.name %></td>
-    <td><%= button_to 'Edit', edit_category_path(category), :class => 'button', :method => 'get', :class => 'input-button', :id => 'button-edit'%></td>
+    <td><%= button_to 'Edit', edit_category_path(category), :class => 'button', :method => 'get'%></td>
   </tr>
   <% end %>
 
-  <tr><td colspan="4" style="text-align:left;"><%= button_to "Create Category", new_category_path, :method => "get", class: 'input-button', :id => 'create-button' %></td></tr>
+  <tr><td colspan="4" style="text-align:left;"><%= button_to "Create Category", new_category_path, :method => "get" %></td></tr>
   </table>
 </div>
 <% end %>
