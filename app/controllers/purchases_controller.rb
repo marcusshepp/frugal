@@ -56,6 +56,7 @@ class PurchasesController < ApplicationController
       end
       @purchase = Purchase.new
       @purchase.item_id = item_id
+      @purchase.user_id = @current_user.id
       @purchase.save!
       redirect_to purchases_path
   end
@@ -67,7 +68,8 @@ class PurchasesController < ApplicationController
   def purchase_params
     params.require(:purchase).permit(
     :amount,
-    :item_id
+    :item_id,
+    :user_id
     )
   end
 
