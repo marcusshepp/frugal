@@ -5,9 +5,11 @@
 
 	<%= form_for(@user, class: 'form') do |f| %>
 	<% if flash[:notice] %>
-		<p style="color: black; background-color:red;"><%= flash[:notice] %></p>
+    <div style="text-align:center;">
+      <p style="color: black; background-color:red; width:auto%;font-size:25px;"><%= flash[:notice] %></p>
+    </div>
   <% else %>
-    <p style="color: black; background-color:red;"></p>
+    <p></p>
 	<% end %>
 
       <%= f.text_field :username, class: 'input', :style => "color: #4CAF50;border: 1px solid #aaa;", placeholder: 'Username' %>
