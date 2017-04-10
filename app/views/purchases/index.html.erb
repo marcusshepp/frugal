@@ -10,11 +10,13 @@
       <th>Edit Purchase</th>
     </tr>
     <% @purchases.each do |purchase| %>
-    <tr>
-      <td><%= Item.all.select{|c| c.id==purchase.item_id}.first.price %></td>
-      <td><%= Item.all.select{|c| c.id==purchase.item_id}.first.name %></td>
-			<td><%= button_to "Delete Purchase", purchase, :method => :delete, :style => "background-color: #4CAF50;" %></td>
-    </tr>
+		<% if purchase.user_id == @current_user.id %>
+			<tr>
+				<td><%= Item.all.select{|c| c.id==purchase.item_id}.first.price %></td>
+				<td><%= Item.all.select{|c| c.id==purchase.item_id}.first.name %></td>
+				<td><%= button_to "Delete Purchase", purchase, :method => :delete, :style => "background-color: #4CAF50;" %></td>
+			</tr>
+    <% end %>
   <% end %>
   <!-- <tr><td colspan="4"><%= button_to 'New Purchase', new_purchase_path, :class => 'button', :method => 'get', :class => 'input-button'%></td></tr> -->
   </table>
