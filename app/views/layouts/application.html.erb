@@ -9,7 +9,7 @@
   </head>
   <!-- Navigation -->
 <div class="b-nav">
-<li><%= link_to image_tag("logo.png", :alt => "empty", :width => 98, :height =>98), login_path, class: 'logo-img' %></li>
+<!-- <li><%= link_to image_tag("logo.png", :alt => "empty", :width => 98, :height =>98), login_path, class: 'logo-img' %></li> -->
 <li><%= link_to 'Items', items_path, :id=>"headlink", class: 'b-link' %></li>
 <li><%= link_to 'Categories	', categories_path, :id=>"headlink", class: 'b-link'%></li>
 <li><%= link_to 'Budget', budgets_path, :id=>"headlink", class: 'b-link'%></li>
@@ -32,7 +32,8 @@
 </div>
 
 <!-- Burger-Brand -->
-<a href="/items" class="b-brand">FRUGAL</a>
+<!-- <a href="/items" class="b-brand">FRUGAL</a> -->
+<%= link_to image_tag("logo.png", :alt => "empty", :width => 98, :height =>98), login_path, class: 'b-brand', :style => '' %>
 </div>
 <div class="container"><div class="menu-icon"><span></span></div></div>
 
