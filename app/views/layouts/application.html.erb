@@ -15,7 +15,8 @@
 <li><%= link_to 'Budget', budgets_path, :id=>"headlink", class: 'b-link'%></li>
 <li><%= link_to 'Purchases', purchases_path, :id=>"headlink", class: 'b-link'%></li>
 <% if current_user %>
-  <li><%= render 'shared/header',:id=>"headlink", class: 'b-link' %></li>
+  <li><%= link_to "Delete Account", '/users_delete', method: :delete,:id=>"headlink", class: 'b-link' %></li>  
+  <li><%= link_to "Log Out", logout_path ,:id=>"headlink", class: 'b-link' %></li>
 <% end %>
 <% if not current_user %>
 <li><%= link_to 'Login', login_path, :id=>"headlink", class: 'b-link'%></li>
