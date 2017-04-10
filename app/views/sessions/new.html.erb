@@ -1,6 +1,3 @@
-
-
-
 <!DOCTYPE html>
 <html >
 <head>
@@ -25,9 +22,11 @@
 
     	<%= f.email_field :email, placeholder:'Email', :style => "color: #4CAF50;border: 1px solid #aaa;" %>
     	<%= f.password_field :password, placeholder:'Password', :style => "color: #4CAF50;border: 1px solid #aaa;" %>
-      <%= f.submit "Log in", :style => "background: #4CAF50;" %>
-      <%= link_to 'Create New Account', new_user_path, :method => 'get'%>
-      <% end %>
+      <div>
+        <%= f.submit "Log in", :style => "background: #4CAF50;" %>
+        <% end %>
+        <%= button_to 'Create New Account', new_user_path, :method => 'get', :style=>'background-color: #4CAF50;'%>
+      </div>
 
   </div>
 </div>
