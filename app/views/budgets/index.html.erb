@@ -1,4 +1,4 @@
-<div class="item-header">
+<div class="item-header" style="margin-top: -200px;">
 		<h1> Budgets </h1>
 </div>
 <% if current_user %>
@@ -13,12 +13,12 @@
   <tr>
     <td><%= budget.total_amount %></td>
     <td><%= budget.current_amount %></td>
-		<td><%= button_to 'Edit Budget', edit_budget_path(budget), :class => 'button', :method => 'get', :class => 'input-button', :id => 'button-edit'%></td>
+		<td><%= button_to 'Edit Budget', edit_budget_path(budget), :method => 'get', :style => "background: #4CAF50;"%></td>
 
   </tr>
   <% end %>
 	<% if !@budgets.present? %>
-		<tr><td colspan="4"><%= button_to 'Create Budget', new_budget_path, :class => 'button', :method => 'get', :class => 'input-button'%></td></tr>
+		<tr><td colspan="4"><%= button_to 'Create Budget', new_budget_path, :method => 'get', :style => "background: #4CAF50;"%></td></tr>
 	<%end%>
   </table>
 </div>

@@ -1,9 +1,6 @@
-<div style="margin: 0 auto; width: 50%; background-color: white;">
-  <div style="margin: 0 auto; width: 50%;">
+<div class="container" style="margin-top: -400px;">
     <%= form_for :budget, url: budget_path(@budget), method: :patch do |f| %>
-      <div class="item-header">
-        <h1>Editing Budget</h1>
-      </div>
+        <h1 style="color:black;">Editing Budget</h1>
       <% if @budget.errors.any? %>
         <div id="error_explanation">
           <h2>
@@ -20,23 +17,22 @@
 
       <div>
         <p>
-          <%= f.label :total_amount %><br>
-          <%= f.number_field :total_amount %>
+          <%= f.label :total_amount, :style => 'font-size: 20px; margin-left: 240px;' %><br>
+          <%= f.number_field :total_amount, :style => 'color:#4CAF50;  border: 1px solid #aaa;' %>
         </p>
 
         <p>
-          <%= f.label :current_amount %><br>
-          <%= f.number_field :current_amount %>
+          <%= f.label :current_amount, :style => 'font-size: 20px; margin-left: 240px;' %><br>
+          <%= f.number_field :current_amount, :style => 'color:#4CAF50; border: 1px solid #aaa;' %>
         </p>
       </div>
       <div>
-            <%= f.submit :class => 'input-button', :id => 'create-button' %>
+            <%= f.submit :style => "background: #4CAF50;" %>
         <% end %>
         <div style="padding-bottom: 5px; padding-top:5px;">
-          <%= button_to "Delete Budget", @budget, :method => :delete, :class => 'input-button', :id => 'create-button' %>
+          <%= button_to "Delete Budget", @budget, :method => :delete, :style => "background-color: #4CAF50;" %>
         </div>
-        <%= button_to 'Back', budgets_path, :class => 'button', :method => 'get', :class => 'input-button', :id => 'create-button'%>
+        <%= button_to 'Back', budgets_path,  :method => 'get', :style => "background-color: #4CAF50;"%>
       </div>
 
-  </div>
 </div>
