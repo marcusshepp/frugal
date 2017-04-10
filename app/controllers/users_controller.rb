@@ -8,6 +8,11 @@ class UsersController < ApplicationController
         @user = User.new
     end
 
+  def destroy
+    current_user.destroy
+    redirect_to login_path
+  end
+
 	def create
 		if @user
       if params[:user].present?

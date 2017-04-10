@@ -21,4 +21,6 @@ Rails.application.routes.draw do
 
   post '/purchase_item', to: 'purchases#purchase_item'
 
+  delete '/users_delete', to: 'users#destroy'
+
 end
