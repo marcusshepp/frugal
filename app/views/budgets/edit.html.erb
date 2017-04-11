@@ -18,12 +18,12 @@
       <div>
         <p>
           <%= f.label :total_amount, :style => 'font-size: 20px; margin-left: 240px;' %><br>
-          <%= f.number_field :total_amount, :style => 'color:#4CAF50;  border: 1px solid #aaa;' %>
+          <%= f.number_field :total_amount, :style => 'color:#4CAF50;  border: 1px solid #aaa;',:step => 0.01 %>
         </p>
 
         <p>
           <%= f.label :current_amount, :style => 'font-size: 20px; margin-left: 240px;' %><br>
-          <%= f.number_field :current_amount, :style => 'color:#4CAF50; border: 1px solid #aaa;' %>
+          <%= f.number_field :current_amount, :style => 'color:#4CAF50; border: 1px solid #aaa;', :step => 0.01%>
         </p>
       </div>
       <div>

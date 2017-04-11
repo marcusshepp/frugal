@@ -4,7 +4,7 @@
 <div class="container" style="margin-top: -400px;">
   <%= form_for(@budget) do |f| %>
   <h3 style="margin-left:250px;">New Budget</h3>
-    <%= f.number_field :total_amount, class: 'input', :style => "color: #4CAF50;border: 1px solid #aaa;", placeholder: 'Amount' %>
+    <%= f.number_field :total_amount, class: 'input', :style => "color: #4CAF50;border: 1px solid #aaa;", placeholder: 'Amount', :step => 0.01%>
     <%= f.hidden_field :user_id, :value => current_user.id %>
     <div style="padding: 5px;">
       <%= f.submit :style => "background: #4CAF50;"%>
