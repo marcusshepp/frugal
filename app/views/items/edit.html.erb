@@ -29,7 +29,7 @@
 
 
   <%= f.label :price, :style => 'font-size: 20px;margin-left: 270px;' %><br>
-  <%= f.number_field :price, :style => "color: #4CAF50;border: 1px solid #aaa;" %>
+  <%= f.number_field :price, :style => "color: #4CAF50;border: 1px solid #aaa;", :step => 0.01%>
 
 
   <%= f.select :category_id, options_for_select(Category.all.map{|c|[c.name, c.id]})%>
