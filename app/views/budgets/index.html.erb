@@ -16,14 +16,11 @@
 					<td><%= budget.current_amount %></td>
 					<td><%= button_to 'Edit Budget', edit_budget_path(budget), :method => 'get', :style => "background: #4CAF50;"%></td>
 				</tr>
-				<% if !@budgets.present? %>
-					<tr><td colspan="4"><%= button_to 'Create Budget', new_budget_path, :method => 'get', :style => "background: #4CAF50;"%></td></tr>
-				<%end%>
 			<% end %>
 		<% end %>
 
 
-		<% if !@budgets.present? %>
+		<% if !@current_user.budgets.present? %>
 			<tr><td colspan="4"><%= button_to 'Create Budget', new_budget_path, :method => 'get', :style => "background: #4CAF50;"%></td></tr>
 		<%end%>
   </table>
