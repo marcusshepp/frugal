@@ -5,6 +5,7 @@ class ItemsController < ApplicationController
 
 	def new
 		@item = Item.new
+        @categories = Category.select{ |c| c.user_id == current_user.id }
 	end
 
     def show
