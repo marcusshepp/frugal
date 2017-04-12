@@ -32,7 +32,7 @@
   <%= f.number_field :price, :style => "color: #4CAF50;border: 1px solid #aaa;", :step => 0.01%>
 
 
-  <%= f.select :category_id, options_for_select(Category.all.map{|c|[c.name, c.id]})%>
+<%= f.collection_select :category_id, current_user.categories, :id, :name %>
 
 
   <%= f.hidden_field :user_id, :value => current_user.id %>

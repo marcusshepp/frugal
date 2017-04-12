@@ -9,6 +9,7 @@
       <th>Purchase Price</th>
       <th>Item Purchased</th>
 			<th>Category</th>
+			<th>Date Purchased</th>
       <th>Edit Purchase</th>
     </tr>
     <% @purchases.each do |purchase| %>
@@ -17,6 +18,7 @@
 				<td><%= Item.all.select{|c| c.id==purchase.item_id}.first.price %></td>
 				<td><%= Item.all.select{|c| c.id==purchase.item_id}.first.name %></td>
 				<td><%= Category.all.select{|c| c.id==Item.all.select{|i| i.id==purchase.item_id}.first.category_id}.first.name %></td>
+        <td> <%= purchase.created_at.strftime("%m/%d/%Y") %></td>
 				<td><%= button_to "Delete Purchase", purchase, :method => :delete, :style => "background-color: #4CAF50;" %></td>
 			</tr>
     <% end %>
