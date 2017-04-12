@@ -14,7 +14,7 @@
 				<%= f.number_field :price, placeholder: 'Item Price', :style => '  border: 1px solid #aaa;', :step => 0.01 %>
 	   </fieldset>
 				   <fieldset>
-				<%= f.select :category_id, options_for_select(Category.all.map{|c|[c.name, c.id]})%>
+			<%= f.collection_select :category_id, current_user.categories, :id, :name %>
 			</fieldset>
 			 <div>
 				 <%= f.hidden_field :user_id, :value => current_user.id %>
