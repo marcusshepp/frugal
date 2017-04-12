@@ -7,6 +7,7 @@
     <tr>
       <th>Budget</th>
       <th>Money Left</th>
+			<th>Created At</th>
       <th>Edit</th>
     </tr>
     <% @budgets.each do |budget| %>
@@ -14,6 +15,7 @@
 				<tr>
 					<td><%= budget.total_amount %></td>
 					<td><%= budget.current_amount %></td>
+					  <td> <%= budget.created_at.strftime("%m/%d/%Y") %></td>
 					<td><%= button_to 'Edit Budget', edit_budget_path(budget), :method => 'get', :style => "background: #4CAF50;"%></td>
 				</tr>
 			<% end %>
